@@ -1,23 +1,72 @@
 <!DOCTYPE html>
-<html>
+<html lang="vi">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Non_Vansu</title>
+<title>NS MOD - Non_Vansu</title>
 <style>
-body{margin:0;min-height:100vh;background:#000;color:#fff;display:flex;justify-content:center;align-items:center;font-family:sans-serif}
-.box{width:90%;max-width:360px;text-align:center;padding:30px 20px;background:#111;border:1px solid #222;border-radius:24px}
-.avatar{width:140px;height:140px;border-radius:50%;border:3px solid #fff;box-shadow:0 0 25px #fff;object-fit:cover}
-.name{font-size:28px;margin:15px 0;font-weight:900;text-shadow:0 0 15px #fff}
-.btn{display:block;width:100%;padding:15px 0;margin:12px 0;background:#fff;color:#000;text-decoration:none;border-radius:30px;font-weight:bold}
+*{margin:0;padding:0;box-sizing:border-box;font-family:sans-serif}
+body{background:#06060e;color:#fff;overflow:hidden}
+#welcome{
+  height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;
+  text-align:center;background:radial-gradient(circle at center,#1a103a 0%,#06060e 70%);
+  padding:20px;transition:.6s
+}
+.icon{width:70px;height:70px;background:#120a28;border-radius:18px;display:flex;justify-content:center;align-items:center;color:#ff3b6b;font-size:40px;font-weight:900;box-shadow:0 0 30px rgba(255,59,107,.4);margin-bottom:20px}
+.tag{font-size:10px;letter-spacing:4px;color:#ff3b6b;margin-bottom:15px}
+h1{font-size:34px;letter-spacing:1px}
+h1 span{color:#ff3b6b}
+.grant{margin-top:12px;font-size:12px;color:#7d5cff;letter-spacing:1px}
+.desc{margin-top:20px;font-size:13px;color:#8b8bb5}
+.desc span{color:#ff6ec7}
+.btn-welcome{
+  margin-top:28px;width:90%;max-width:360px;padding:16px;
+  background:linear-gradient(90deg,#ff2e7a,#7d5cff);
+  border:none;border-radius:30px;color:#fff;font-weight:900;
+  font-size:14px;cursor:pointer;display:flex;justify-content:center;align-items:center;gap:10px
+}
+#bio{
+  height:100vh;display:none;justify-content:center;align-items:center;
+  background:#000;
+}
+.card{
+  width:88%;max-width:360px;text-align:center;
+  padding:34px 22px;background:#101010;
+  border:1px solid #222;border-radius:28px;
+}
+.avatar{width:140px;height:140px;border-radius:50%;border:3px solid #fff;object-fit:cover;box-shadow:0 0 25px #fff}
+.name{font-size:30px;font-weight:900;margin:16px 0 6px;text-shadow:0 0 15px #fff}
+.sub{font-size:13px;opacity:.45;margin-bottom:22px}
+.btn{display:block;width:100%;padding:15px 0;margin:12px 0;background:#fff;color:#000;text-decoration:none;border-radius:30px;font-weight:800}
 </style>
 </head>
 <body>
-<div class="box">
-<img class="avatar" src="avatar.jpg?v=2" alt="avatar">
-<div class="name">Non_Vansu</div>
-<p style="opacity:.5;font-size:12px;margin-bottom:20px">Welcome to my bio</p>
-<a class="btn" href="https://drive.google.com/file/d/1Ih6sa7jrNiMsoASpBCZnqXEsmgekrJcJ/view">TẢI GAME NGAY</a>
+
+<div id="welcome">
+  <div class="icon">+</div>
+  <div class="tag">— SYSTEM // SECURE ACCESS —</div>
+  <h1>WELCOME TO <span>NS MOD</span></h1>
+  <div class="grant">ACCESS GRANTED • SONCHOIGAME</div>
+  <div class="desc">KHO LƯU TRỮ MOD VÀ TIỆN ÍCH CỦA NSMOD<br><span>Telegram: @Sonchoigame123</span></div>
+  <button class="btn-welcome" onclick="enterWeb()">+ &nbsp; VÀO WEB NGAY &nbsp; →</button>
+  <div style="margin-top:20px;font-size:10px;opacity:.4;letter-spacing:2px">ENCRYPTED SESSION &nbsp;&nbsp;&nbsp;&nbsp; NS // 2026</div>
 </div>
+
+<div id="bio">
+  <div class="card">
+    <img class="avatar" src="avatar.jpg?v=3" alt="Non_Vansu">
+    <div class="name">Non_Vansu</div>
+    <div class="sub">WELCOME TO MY BIO</div>
+    <a class="btn" href="https://drive.google.com/file/d/1Ih6sa7jrNiMsoASpBCZnqXEsmgekrJcJ/view" target="_blank">TẢI GAME NGAY 🔥</a>
+  </div>
+</div>
+
+<script>
+function enterWeb(){
+  document.getElementById('welcome').style.display='none';
+  document.getElementById('bio').style.display='flex';
+}
+</script>
+
 </body>
 </html>
