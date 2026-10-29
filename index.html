@@ -21,7 +21,7 @@ body{background:#06060e;color:#fff;overflow-x:hidden}
 .avatar-wrap img{width:100%;height:100%;border-radius:50%;object-fit:cover;background:#000}
 .name{margin-top:12px;font-size:13px;color:#a78bfa}
 .brand{font-size:22px;font-weight:900;letter-spacing:2px;margin-top:2px}
-.btn-game{margin:16px auto 0;max-width:340px;padding:14px;background:linear-gradient(90deg,#0a0a14,#15112a);border:1px solid #2a234a;border-radius:24px;display:flex;justify-content:center;gap:8px;font-weight:800;font-size:13px}
+.btn-game{margin:16px auto 0;max-width:340px;padding:12px 14px;background:linear-gradient(90deg,#0a0a14,#15112a);border:1px solid #2a234a;border-radius:24px;display:flex;justify-content:center;align-items:center;gap:8px;font-weight:800;font-size:11px;line-height:1.4;text-align:center;cursor:pointer}
 .search{margin:16px 0}
 .search input{width:100%;padding:14px 16px;background:#12112a;border:1px solid #23234a;border-radius:14px;color:#fff;outline:none}
 .sec{display:flex;justify-content:space-between;align-items:center;margin:22px 0 10px}
@@ -30,7 +30,6 @@ body{background:#06060e;color:#fff;overflow-x:hidden}
 .card img{width:52px;height:52px;border-radius:16px;object-fit:cover;background:#000}
 .card .i{flex:1}.card .t{font-size:14px;font-weight:800}.card .d{font-size:10px;color:#8b8bb5;margin-top:2px}
 .down{width:40px;height:40px;border-radius:12px;display:flex;justify-content:center;align-items:center;text-decoration:none;color:#fff;background:#0ea5e9}
-/* POPUP CHỌN PHIÊN BẢN */
 #overlay{position:fixed;inset:0;background:rgba(0,0,0,.6);backdrop-filter:blur(8px);z-index:100;display:none;justify-content:center;align-items:center;padding:20px}
 #popup{background:#fff;width:100%;max-width:380px;border-radius:26px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.5);animation:pop .25s ease}
 @keyframes pop{from{transform:scale(.9);opacity:0}to{transform:scale(1);opacity:1}}
@@ -60,13 +59,12 @@ body{background:#06060e;color:#fff;overflow-x:hidden}
     <button class="btn-enter" id="btnEnter">+ VÀO WEB NGAY →</button>
   </div>
 </div>
-
 <div id="main" style="display:none">
   <div class="top">
     <div class="avatar-wrap"><img src="avatar.jpg" alt="" onerror="this.src='avatar.jpg.webp'"></div>
     <div class="name">Non_Vansu</div>
     <div class="brand">† NS MOD †</div>
-    <div class="btn-game">↑ TẢI GAME NGAY ↑</div>
+    <div class="btn-game">💝 Donate cho Hoàng để giúp Hoàng cập nhật file mới nhất nhé</div>
   </div>
   <div class="search"><input id="q" type="text" placeholder="Tìm file, game, mod..."></div>
   <div class="sec"><b>⭐ YÊU THÍCH</b><b>MỚI</b></div>
@@ -78,8 +76,6 @@ body{background:#06060e;color:#fff;overflow-x:hidden}
     </div>
   </div>
 </div>
-
-<!-- POPUP -->
 <div id="overlay" onclick="if(event.target==this)closePopup()">
   <div id="popup">
     <div class="popup-head">
@@ -100,7 +96,6 @@ body{background:#06060e;color:#fff;overflow-x:hidden}
     </div>
   </div>
 </div>
-
 <script>
 function openPopup(){document.getElementById('overlay').style.display='flex'}
 function closePopup(){document.getElementById('overlay').style.display='none'}
