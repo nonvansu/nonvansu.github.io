@@ -26,14 +26,10 @@ body{background:#06060e;color:#fff;overflow-x:hidden}
 .search input{width:100%;padding:14px 16px;background:#12112a;border:1px solid #23234a;border-radius:14px;color:#fff;outline:none}
 .sec{display:flex;justify-content:space-between;align-items:center;margin:22px 0 10px}
 .sec b{font-size:11px;letter-spacing:1px;color:#a78bfa;border:1px solid #2a234a;padding:6px 12px;border-radius:20px;background:#14112a}
-
-/* CARD THƯỜNG */
 .card{display:flex;align-items:center;gap:12px;background:#14112a;border:1px solid #23234a;border-radius:18px;padding:12px;margin-bottom:12px;cursor:pointer;position:relative}
 .card img{width:52px;height:52px;border-radius:16px;object-fit:cover;background:#000}
 .card .i{flex:1}.card .t{font-size:14px;font-weight:800}.card .d{font-size:10px;color:#8b8bb5;margin-top:2px}
 .down{width:40px;height:40px;border-radius:12px;display:flex;justify-content:center;align-items:center;text-decoration:none;color:#fff;background:#0ea5e9}
-
-/* CARD VIP MỚI - Y HÌNH ÔNG GỬI */
 .card-vip-new{position:relative;display:flex;align-items:center;gap:14px;background:#1c1936;border:2px solid #3d3770;border-radius:24px;padding:16px 14px;margin-bottom:16px;cursor:pointer;box-shadow:0 0 0 1px rgba(125,92,255,.15) inset}
 .card-vip-new .vip-icon{width:62px;height:62px;border-radius:18px;background:#0a9be0;object-fit:cover;border:2px solid #4a4580;flex-shrink:0;box-shadow:0 4px 12px rgba(0,0,0,.5)}
 .card-vip-new .vip-info{flex:1;min-width:0}
@@ -45,8 +41,6 @@ body{background:#06060e;color:#fff;overflow-x:hidden}
 .card-vip-new .tag-anti{background:rgba(16,185,129,.15);border:1.5px solid #34d399;color:#d1fae5;box-shadow:0 0 15px rgba(52,211,153,.5), inset 0 0 10px rgba(52,211,153,.15)}
 .card-vip-new .vip-share{width:52px;height:52px;border-radius:18px;background:linear-gradient(135deg,#e879f9,#a855f7);display:flex;justify-content:center;align-items:center;font-size:22px;color:#fff;font-weight:900;box-shadow:0 0 20px rgba(168,85,247,.7), 0 0 0 2px rgba(255,255,255,.2) inset;flex-shrink:0}
 .card-vip-new .fav-btn{position:absolute;top:-12px;right:-10px;width:40px;height:40px;border-radius:50%;background:#2e2a50;border:2px solid #5a4f8a;display:flex;justify-content:center;align-items:center;color:#d8d6e8;font-size:20px;box-shadow:0 4px 16px rgba(0,0,0,.6);z-index:2}
-
-/* POPUP */
 #overlay, #vipOverlay, #bbpOverlay{position:fixed;inset:0;background:rgba(0,0,0,.65);backdrop-filter:blur(10px);z-index:100;display:none;justify-content:center;align-items:center;padding:20px}
 #popup{background:#fff;width:100%;max-width:380px;border-radius:26px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.5);animation:pop .25s ease}
 @keyframes pop{from{transform:scale(.9);opacity:0}to{transform:scale(1);opacity:1}}
@@ -113,10 +107,10 @@ body{background:#06060e;color:#fff;overflow-x:hidden}
       </div>
       <div class="vip-share">↗</div>
     </div>
-    <!-- THẺ MỚI Y HÌNH ÔNG GỬI -->
+    <!-- THẺ 8BP - ĐÃ FIX LỖI .JPG.JPG -->
     <div class="card-vip-new file" onclick="openBbp()">
       <div class="fav-btn">♡</div>
-      <img class="vip-icon" src="8bp.jpg" alt="8BP" onerror="this.src='https://i.imgur.com/8Km9tLL.png'">
+      <img class="vip-icon" src="8bp.jpg" alt="8BP" onerror="if(!this.dataset.retry){this.dataset.retry=1;this.src='8bp.jpg.jpg'}else{this.src='https://i.imgur.com/8Km9tLL.png'}">
       <div class="vip-info">
         <div class="vip-title">iPA MENU NO KEY 8BP</div>
         <div class="vip-desc">• Đã cập nhật 29/8</div>
@@ -152,7 +146,7 @@ body{background:#06060e;color:#fff;overflow-x:hidden}
 
 <div id="bbpOverlay" onclick="if(event.target==this)closeBbp()">
   <div class="vipPopup">
-    <div class="vip-top"><img src="8bp.jpg" alt="8BP" onerror="this.src='https://i.imgur.com/8Km9tLL.png'"><div><b>iPA MENU NO KEY 8BP</b><br><small>IPA</small></div><button class="close-vip" onclick="closeBbp()">✕</button></div>
+    <div class="vip-top"><img src="8bp.jpg" alt="8BP" onerror="if(!this.dataset.retry){this.dataset.retry=1;this.src='8bp.jpg.jpg'}else{this.src='https://i.imgur.com/8Km9tLL.png'}"><div><b>iPA MENU NO KEY 8BP</b><br><small>IPA</small></div><button class="close-vip" onclick="closeBbp()">✕</button></div>
     <div class="vip-tabs"><button class="vip-tab active" id="tabChiTiet8" onclick="showTab('ct','8bp')">ℹ️ CHI TIẾT</button><button class="vip-tab" id="tabHd8" onclick="showTab('hd','8bp')">📖 HD SỬ DỤNG</button></div>
     <div class="vip-content" id="ctContent8"><div class="vip-row"><div class="ic" style="background:rgba(255,59,122,.15);color:#ff3b7a">❤️</div><p><b>Thả tim:</b> Để lưu file vào mục Yêu thích nếu sau cần dùng.</p></div><div class="vip-row"><div class="ic" style="background:rgba(14,165,233,.15);color:#0ea5e9">⚙️</div><p>Tất cả các file đều cần chứng chỉ để cài nên anh em muốn cài được thì phải có chứng chỉ. Có thể liên hệ Admin để mua ở nút bên dưới.</p></div><div class="vip-row"><div class="ic" style="background:rgba(251,191,36,.15);color:#fbbf24">☕</div><p>Cần AD hỗ trợ cài thì hãy cho Admin 1 cốc cafe hoặc cốc trà đá tùy tâm mỗi người nhé!!</p></div><div class="vip-admin"><button class="btn-admin" onclick="window.open('https://t.me/nonvansu','_blank')">👤 ADMIN</button></div></div>
     <div class="vip-content" id="hdContent8" style="display:none"><div class="vip-row"><div class="ic">🎱</div><p><b>8 Ball Pool Menu No Key:</b><br>• Auto win, đường kẻ dài<br>• Antiban an toàn<br>1. Tải file<br>2. Ký chứng chỉ qua ESign / GBox<br>3. Cài và chơi!</p></div></div>
