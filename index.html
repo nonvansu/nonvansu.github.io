@@ -7,15 +7,8 @@
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:Inter,system-ui}
 body{background:#06060e;color:#fff;overflow-x:hidden}
-#welcome{
-  position:fixed;inset:0;z-index:99;display:flex;justify-content:center;align-items:center;
-  background:radial-gradient(circle at center,#1a103a 0%,#06060e 70%);
-}
-.w-box{
-  width:92%;max-width:400px;background:rgba(20,15,40,.8);border:1px solid #2a234a;
-  border-radius:22px;padding:28px 20px;text-align:center;backdrop-filter:blur(10px);
-  box-shadow:0 0 60px rgba(168,85,247,.25)
-}
+#welcome{position:fixed;inset:0;z-index:99;display:flex;justify-content:center;align-items:center;background:radial-gradient(circle at center,#1a103a 0%,#06060e 70%)}
+.w-box{width:92%;max-width:400px;background:rgba(20,15,40,.8);border:1px solid #2a234a;border-radius:22px;padding:28px 20px;text-align:center;backdrop-filter:blur(10px);box-shadow:0 0 60px rgba(168,85,247,.25)}
 .w-icon{width:60px;height:60px;background:#1a1035;border-radius:16px;display:flex;justify-content:center;align-items:center;color:#ff3b7a;font-size:30px;margin:0 auto 14px}
 .w-tag{font-size:9px;letter-spacing:3px;color:#ff3b7a}
 .w-title{font-size:22px;font-weight:900;margin:10px 0 4px} .w-title span{color:#ff3b7a}
@@ -23,8 +16,8 @@ body{background:#06060e;color:#fff;overflow-x:hidden}
 .w-desc{font-size:11px;color:#8b8bb5;margin-top:16px}
 .btn-enter{margin-top:18px;width:100%;padding:14px;background:linear-gradient(90deg,#ff2e7a,#7d5cff);border:none;border-radius:24px;color:#fff;font-weight:900;cursor:pointer}
 #main{display:none;min-height:100vh;background:radial-gradient(circle at top,#1a103a 0%,#06060e 60%);padding:18px}
-.top{ text-align:center; padding-top:12px }
-.avatar-wrap{width:110px;height:110px;margin:0 auto; border-radius:50%; padding:3px; background:linear-gradient(135deg,#ff2e7a,#7d5cff); box-shadow:0 0 30px rgba(255,46,122,.6)}
+.top{text-align:center;padding-top:12px}
+.avatar-wrap{width:110px;height:110px;margin:0 auto;border-radius:50%;padding:3px;background:linear-gradient(135deg,#ff2e7a,#7d5cff);box-shadow:0 0 30px rgba(255,46,122,.6)}
 .avatar-wrap img{width:100%;height:100%;border-radius:50%;object-fit:cover;background:#000}
 .name{margin-top:12px;font-size:13px;color:#a78bfa}
 .brand{font-size:22px;font-weight:900;letter-spacing:2px;margin-top:2px}
@@ -33,13 +26,10 @@ body{background:#06060e;color:#fff;overflow-x:hidden}
 .search input{width:100%;padding:14px 16px;background:#12112a;border:1px solid #23234a;border-radius:14px;color:#fff;outline:none}
 .sec{display:flex;justify-content:space-between;align-items:center;margin:22px 0 10px}
 .sec b{font-size:11px;letter-spacing:1px;color:#a78bfa;border:1px solid #2a234a;padding:6px 12px;border-radius:20px;background:#14112a}
-.card{ display:flex;align-items:center;gap:12px;background:#14112a;border:1px solid #23234a;border-radius:18px;padding:12px;margin-bottom:10px }
+.card{display:flex;align-items:center;gap:12px;background:#14112a;border:1px solid #23234a;border-radius:18px;padding:12px;margin-bottom:10px}
 .card img{width:44px;height:44px;border-radius:12px;object-fit:cover;background:#fff}
-.card .i{flex:1}
-.card .t{font-size:13px;font-weight:800}
-.card .d{font-size:10px;color:#8b8bb5;margin-top:2px}
-.down{width:40px;height:40px;border-radius:12px;display:flex;justify-content:center;align-items:center;text-decoration:none;color:#fff}
-.down.p{background:#a855f7} .down.b{background:#0ea5e9}
+.card .i{flex:1}.card .t{font-size:13px;font-weight:800}.card .d{font-size:10px;color:#8b8bb5;margin-top:2px}
+.down{width:40px;height:40px;border-radius:12px;display:flex;justify-content:center;align-items:center;text-decoration:none;color:#fff;background:#0ea5e9}
 </style>
 </head>
 <body>
@@ -50,7 +40,7 @@ body{background:#06060e;color:#fff;overflow-x:hidden}
     <div class="w-title">WELCOME TO <span>MOD NON_VANSU</span></div>
     <div class="w-sub">ACCESS GRANTED • NON_VANSU • CONTENT UPDATED</div>
     <div class="w-desc">KHO LƯU TRỮ MOD VÀ TIỆN ÍCH CỦA NON_VANSU</div>
-    <button class="btn-enter" onclick="enter()">+ VÀO WEB NGAY →</button>
+    <button class="btn-enter" id="btnEnter">+ VÀO WEB NGAY →</button>
   </div>
 </div>
 
@@ -61,40 +51,30 @@ body{background:#06060e;color:#fff;overflow-x:hidden}
     <div class="brand">† NS MOD †</div>
     <div class="btn-game">↑ TẢI GAME NGAY ↑</div>
   </div>
-
-  <div class="search"><input id="q" onkeyup="searchFile()" placeholder="Tìm file, game, mod..."></div>
+  <div class="search"><input id="q" type="text" placeholder="Tìm file, game, mod..."></div>
   <div class="sec"><b>⭐ YÊU THÍCH</b><b>MỚI</b></div>
-
   <div id="list">
     <div class="card file">
-      <img src="avatar.jpg?v=99">
-      <div class="i"><div class="t">Hướng Dẫn Sử Dụng Raw</div><div class="d">• Vào App 3105 Chọn Dấu + Rồi Dán</div></div>
-      <a class="down p" href="#">›</a>
-    </div>
-    <div class="card file">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg">
-      <div class="i"><div class="t">MÃ DAME FACEBOOK</div><div class="d">• NHỚ XEM VIDEO HƯỚNG DẪN</div></div>
-      <a class="down b" href="#">☁️</a>
-    </div>
-    <div class="card file">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg">
-      <div class="i"><div class="t">CÁCH MỞ KHÓA ACC FACEBOOK</div><div class="d">• XEM HƯỚNG DẪN THẬT KỸ NHÉ</div></div>
-      <a class="down b" href="#">☁️</a>
+      <img src="https://upload.wikimedia.org/wikipedia/en/a/a9/TikTok_logo.svg" alt="Gtiktok">
+      <div class="i"><div class="t">Gtiktok</div><div class="d">• TOOL TIKTOK MOD • TĂNG VIEW - TIM</div></div>
+      <a class="down" href="https://drive.google.com/file/d/1Ih6sa7jrNiMsoASpBCZnqXEsmgekrJcJ/view" target="_blank">☁️</a>
     </div>
   </div>
 </div>
 
 <script>
-function enter(){
-  document.getElementById('welcome').style.display='none';
-  document.getElementById('main').style.display='block';
-}
-function searchFile(){
-  let v=document.getElementById('q').value.toLowerCase();
-  document.querySelectorAll('.file').forEach(c=>{
-    c.style.display=c.innerText.toLowerCase().includes(v)?'flex':'none'
+document.addEventListener('DOMContentLoaded', function(){
+  document.getElementById('btnEnter').addEventListener('click', function(){
+    document.getElementById('welcome').style.display='none';
+    document.getElementById('main').style.display='block';
+  });
+  document.getElementById('q').addEventListener('keyup', function(){
+    let v=this.value.toLowerCase();
+    document.querySelectorAll('.file').forEach(c=>{
+      c.style.display=c.innerText.toLowerCase().includes(v)?'flex':'none'
+    })
   })
-}
+})
 </script>
 </body>
 </html>
