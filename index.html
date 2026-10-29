@@ -1,30 +1,130 @@
 <!DOCTYPE html>
-<html>
+<html lang="vi">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Mod Non_Vansu</title>
+<title>MOD NON_VANSU</title>
 <style>
-body{margin:0;min-height:100vh;background:#0a0a12;color:#fff;display:flex;justify-content:center;align-items:center;font-family:sans-serif;text-align:center}
-.box{width:90%;max-width:380px;padding:30px 20px;background:#10101a;border:1px solid #222;border-radius:20px;box-shadow:0 0 40px rgba(255,59,107,.2)}
-.icon{width:70px;height:70px;margin:0 auto 15px;background:#1a102e;border-radius:18px;display:flex;justify-content:center;align-items:center;color:#ff3b6b;font-size:40px;font-weight:900}
-h1{font-size:28px;margin:10px 0}
-h1 span{color:#ff3b6b}
-.avatar{width:130px;height:130px;border-radius:50%;border:3px solid #fff;object-fit:cover;box-shadow:0 0 20px #fff;margin-top:20px}
-.btn{display:block;width:100%;padding:15px 0;margin-top:20px;background:linear-gradient(90deg,#ff2e7a,#7d5cff);color:#fff;text-decoration:none;border-radius:30px;font-weight:800}
+*{margin:0;padding:0;box-sizing:border-box;font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto}
+body{background:#0a0a14;color:#fff;min-height:100vh;padding:20px}
+.container{max-width:750px;margin:0 auto}
+.header{text-align:center;padding:30px 0 20px}
+.icon{width:70px;height:70px;background:#15112a;border-radius:20px;display:flex;justify-content:center;align-items:center;color:#ff3b7a;font-size:40px;font-weight:900;margin:0 auto 12px;box-shadow:0 0 25px rgba(255,59,122,.3)}
+h1{font-size:28px;letter-spacing:1px} h1 span{color:#ff3b7a}
+.search-wrap{position:relative;margin:25px 0}
+.search-wrap input{
+  width:100%;padding:16px 20px 16px 48px;background:#13131f;border:1px solid #22223a;
+  border-radius:16px;color:#fff;font-size:14px;outline:none
+}
+.search-wrap::before{content:"🔍";position:absolute;left:18px;top:50%;transform:translateY(-50%);opacity:.5}
+.section-tag{
+  display:inline-block;padding:7px 14px;background:#1a1630;border:1px solid #2a234d;
+  border-radius:20px;font-size:11px;letter-spacing:1px;color:#a78bfa;margin:28px 0 12px
+}
+.title-big{font-size:18px;font-weight:900;letter-spacing:.5px;margin:10px 0 14px;display:flex;align-items:center;gap:10px}
+.card{
+  background:linear-gradient(135deg,#15152e 0%,#12122a 100%);
+  border:1px solid #23234a;border-radius:20px;
+  padding:16px;display:flex;align-items:center;gap:14px;
+  margin-bottom:12px;transition:.2s;position:relative
+}
+.card:hover{border-color:#5a4fcf;transform:translateY(-1px)}
+.card img{width:52px;height:52px;border-radius:14px;object-fit:cover;background:#fff}
+.card-info{flex:1}
+.card-title{font-size:14px;font-weight:800}
+.card-sub{font-size:11px;color:#8b8bb5;margin-top:3px}
+.tags{margin-top:6px;display:flex;gap:6px}
+.tag-mini{font-size:10px;padding:4px 8px;border-radius:10px;background:#1e1b3a;border:1px solid #2d2a5a}
+.tag-mini.pink{color:#ff7aa2;border-color:#4a2340}
+.tag-mini.blue{color:#7dd3ff;border-color:#23445a}
+.btn-down{
+  width:44px;height:44px;border-radius:14px;display:flex;justify-content:center;align-items:center;
+  background:linear-gradient(135deg,#a855f7,#7c3aed);color:#fff;text-decoration:none;
+  box-shadow:0 0 15px rgba(168,85,247,.5);font-size:18px
+}
+.btn-down.blue{background:linear-gradient(135deg,#0ea5e9,#0284c7);box-shadow:0 0 15px rgba(14,165,233,.5)}
+.hidden{display:none !important}
 </style>
 </head>
 <body>
-<div class="box">
-<div class="icon">+</div>
-<h1>WELCOME TO <span>MOD NON_VANSU</span></h1>
-<p style="font-size:11px;letter-spacing:2px;color:#7d5cff;margin-top:8px">ACCESS GRANTED • NON_VANSU</p>
-<p style="font-size:13px;color:#8b8bb5;margin-top:15px">KHO LƯU TRỮ MOD VÀ TIỆN ÍCH<br><span style="color:#ff6ec7">Telegram: @Sonchoigame123</span></p>
+<div class="container">
+  <div class="header">
+    <div class="icon">+</div>
+    <h1>WELCOME TO <span>MOD NON_VANSU</span></h1>
+    <p style="font-size:11px;color:#6b6b9a;margin-top:6px;letter-spacing:2px">KHO LƯU TRỮ MOD & TIỆN ÍCH</p>
+  </div>
 
-<img class="avatar" src="avatar.jpg?v=99" alt="Non_Vansu">
-<div style="font-size:22px;font-weight:900;margin-top:12px">Non_Vansu</div>
+  <div class="search-wrap">
+    <input id="searchInput" type="text" placeholder="Tìm file, game, mod, hướng dẫn..." onkeyup="searchFile()">
+  </div>
+  <p style="font-size:11px;color:#ff5a5a;opacity:.7">⚠ Hỗ trợ tiếng Việt có dấu / không dấu và từ khóa gần đúng</p>
 
-<a class="btn" href="https://drive.google.com/file/d/1Ih6sa7jrNiMsoASpBCZnqXEsmgekrJcJ/view" target="_blank">VÀO WEB NGAY →</a>
+  <div class="section-tag">📺 VIDEO HƯỚNG DẪN // NS MOD</div>
+  
+  <div class="card file-item">
+    <img src="avatar.jpg?v=99" alt="">
+    <div class="card-info">
+      <div class="card-title">Hướng Dẫn Sử Dụng Raw</div>
+      <div class="card-sub">• Vào App 3105 Chọn Dấu + Rồi Dán</div>
+      <div class="tags"><span class="tag-mini pink">🎥 Hướng Dẫn</span><span class="tag-mini blue">🛡️ Antiban</span></div>
+    </div>
+    <a class="btn-down" href="https://www.tiktok.com/@nonvansu" target="_blank">›</a>
+  </div>
+
+  <div class="card file-item">
+    <img src="https://i.imgur.com/8Km9tLL.png" alt="">
+    <div class="card-info">
+      <div class="card-title">CÁCH DÙNG ANTIBAN FF</div>
+      <div class="card-sub">• CẬP NHẬT 5/9</div>
+      <div class="tags"><span class="tag-mini pink">🎥 Hướng Dẫn</span><span class="tag-mini blue">🛡️ Antiban</span></div>
+    </div>
+    <a class="btn-down" href="#" target="_blank">›</a>
+  </div>
+
+  <div class="section-tag">🌐 TRICK LỒ FACEBOOK // NS MOD</div>
+  <div class="title-big">📦 TÀI NGUYÊN TẢI XUỐNG</div>
+
+  <div class="card file-item">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="">
+    <div class="card-info">
+      <div class="card-title">MÃ DAME FACEBOOK</div>
+      <div class="card-sub">• NHỚ XEM VIDEO HƯỚNG DẪN</div>
+      <div class="tags"><span class="tag-mini blue">🍎 iOS</span></div>
+    </div>
+    <a class="btn-down blue" href="https://drive.google.com/file/d/1Ih6sa7jrNiMsoASpBCZnqXEsmgekrJcJ/view" target="_blank">☁️</a>
+  </div>
+
+  <div class="card file-item">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="">
+    <div class="card-info">
+      <div class="card-title">CÁCH MỞ KHÓA ACC FACEBOOK</div>
+      <div class="card-sub">• XEM HƯỚNG DẪN THẬT KỸ NHÉ</div>
+      <div class="tags"><span class="tag-mini blue">🍎 iOS</span></div>
+    </div>
+    <a class="btn-down blue" href="https://drive.google.com/file/d/XXXX/view" target="_blank">☁️</a>
+  </div>
+
+  <div class="card file-item">
+    <img src="https://i.imgur.com/Qk0p2bO.png" alt="">
+    <div class="card-info">
+      <div class="card-title">FILE GAME MOD BLOX FRUIT</div>
+      <div class="card-sub">• AUTO FARM, ESP, SPEED HACK</div>
+      <div class="tags"><span class="tag-mini pink">🔥 HOT</span><span class="tag-mini blue">📱 Android</span></div>
+    </div>
+    <a class="btn-down blue" href="https://drive.google.com/file/d/XXXX2/view" target="_blank">☁️</a>
+  </div>
+
 </div>
+
+<script>
+function searchFile(){
+  let q = document.getElementById('searchInput').value.toLowerCase();
+  document.querySelectorAll('.file-item').forEach(card=>{
+    let text = card.innerText.toLowerCase();
+    if(text.includes(q)){ card.classList.remove('hidden'); }
+    else{ card.classList.add('hidden'); }
+  });
+}
+</script>
 </body>
 </html>
