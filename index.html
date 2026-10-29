@@ -7,7 +7,9 @@
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:Inter,system-ui}
 body{background:#06060e;color:#fff;overflow-x:hidden}
-#welcome{position:fixed;inset:0;z-index:99;display:flex;justify-content:center;align-items:center;background:radial-gradient(circle at center,#1a103a 0%,#06060e 70%)}
+/* CANVAS MATRIX */
+#matrix{position:fixed;inset:0;z-index:-1;opacity:0.18;pointer-events:none}
+#welcome{position:fixed;inset:0;z-index:99;display:flex;justify-content:center;align-items:center;background:radial-gradient(circle at center,rgba(26,16,58,0.9) 0%,rgba(6,6,14,0.95) 70%)}
 .w-box{width:92%;max-width:400px;background:rgba(20,15,40,.85);border:1px solid #2a234a;border-radius:22px;padding:28px 20px;text-align:center;backdrop-filter:blur(10px);box-shadow:0 0 60px rgba(168,85,247,.25)}
 .w-icon{width:60px;height:60px;background:#1a1035;border-radius:16px;display:flex;justify-content:center;align-items:center;color:#ff3b7a;font-size:30px;margin:0 auto 14px}
 .w-tag{font-size:9px;letter-spacing:3px;color:#ff3b7a}
@@ -15,12 +17,12 @@ body{background:#06060e;color:#fff;overflow-x:hidden}
 .w-sub{font-size:10px;color:#6b6b9a;margin-top:4px}
 .w-desc{font-size:11px;color:#8b8bb5;margin-top:16px}
 .btn-enter{margin-top:18px;width:100%;padding:14px;background:linear-gradient(90deg,#ff2e7a,#7d5cff);border:none;border-radius:24px;color:#fff;font-weight:900;cursor:pointer}
-#main{min-height:100vh;background:radial-gradient(circle at top,#1a103a 0%,#06060e 60%);padding:18px}
+#main{min-height:100vh;background:radial-gradient(circle at top,rgba(26,16,58,0.6) 0%,rgba(6,6,14,0.9) 60%);padding:18px;position:relative;z-index:1}
 .top{text-align:center;padding-top:12px}
 .avatar-wrap{width:110px;height:110px;margin:0 auto;border-radius:50%;padding:3px;background:linear-gradient(135deg,#ff2e7a,#7d5cff);box-shadow:0 0 30px rgba(255,46,122,.6)}
 .avatar-wrap img{width:100%;height:100%;border-radius:50%;object-fit:cover;background:#000}
 .name{margin-top:12px;font-size:13px;color:#a78bfa}
-.brand{font-size:22px;font-weight:900;letter-spacing:2px;margin-top:2px}
+.brand{font-size:22px;font-weight:900;letter-spacing:2px;margin-top:2px;text-shadow:0 0 15px rgba(255,46,122,.8)}
 .btn-game{margin:16px auto 0;max-width:340px;padding:12px 14px;background:linear-gradient(90deg,#0a0a14,#15112a);border:1px solid #2a234a;border-radius:24px;display:flex;justify-content:center;align-items:center;gap:8px;font-weight:800;font-size:11px;line-height:1.4;text-align:center;cursor:pointer}
 .search{margin:16px 0}
 .search input{width:100%;padding:14px 16px;background:#12112a;border:1px solid #23234a;border-radius:14px;color:#fff;outline:none}
@@ -68,13 +70,15 @@ body{background:#06060e;color:#fff;overflow-x:hidden}
 .vip-admin{display:flex;justify-content:flex-end;margin-top:8px}
 .btn-admin{padding:10px 18px;border-radius:14px;background:#2a234a;border:1px solid #3a2d6b;color:#c7b3ff;font-weight:800;font-size:12px;cursor:pointer}
 .btn-tai{margin:16px;background:linear-gradient(90deg,#8b5cf6,#a855f7);border:none;border-radius:18px;padding:16px;color:#fff;font-weight:900;font-size:16px;width:calc(100% - 32px);cursor:pointer;display:flex;justify-content:center;gap:8px}
-#musicBtn{position:fixed;bottom:20px;right:20px;width:52px;height:52px;background:linear-gradient(135deg,#ff2e7a,#7d5cff);border-radius:50%;display:flex;justify-content:center;align-items:center;font-size:24px;cursor:pointer;z-index:9999;box-shadow:0 0 20px rgba(255,46,122,.7),0 0 0 2px rgba(255,255,255,.15) inset;animation:musicPulse 2s infinite}
+#musicBtn{position:fixed;bottom:20px;right:20px;width:52px;height:52px;background:linear-gradient(135deg,#ff2e7a,#7d5cff);border-radius:50%;display:flex;justify-content:center;align-items:center;font-size:24px;cursor:pointer;z-index:9999;box-shadow:0 0 20px rgba(255,46,122,.7);animation:musicPulse 2s infinite}
 @keyframes musicPulse{0%,100%{transform:scale(1)}50%{transform:scale(1.08)}}
 </style>
 </head>
 <body>
 
-<!-- NHẠC NỀN ĐÃ ĐỔI THÀNH nhac.mp3.mp4 -->
+<canvas id="matrix"></canvas>
+
+<!-- NHẠC NỀN - nhac.mp3.mp4 -->
 <audio id="bgMusic" loop preload="auto">
   <source src="nhac.mp3.mp4" type="video/mp4">
   <source src="nhac.mp3.mp4" type="audio/mp4">
@@ -88,23 +92,45 @@ body{background:#06060e;color:#fff;overflow-x:hidden}
 <div class="search"><input id="q" type="text" placeholder="Tìm file, game, mod..."></div>
 <div class="sec"><b>⭐ YÊU THÍCH</b><b>MỚI</b></div>
 <div id="list">
-<div class="card file" onclick="openPopup()"><img src="GTikTok.jpg.jpg" alt="GTikTok" onerror="if(this.src.includes('GTikTok.jpg.jpg')){this.src='GTikTok.jpg'}else{this.src='https://cdn.pixabay.com/photo/2021/06/15/12/28/tiktok-3338011_1280.png'}"><div class="i"><div class="t">GTikTok</div><div class="d">• TOOL TIKTOK MOD • BẢN MỚI NHẤT</div></div><div class="down">☁️</div></div>
+<div class="card file" onclick="openPopup()"><img src="GTikTok.jpg.jpg" alt="GTikTok"><div class="i"><div class="t">GTikTok</div><div class="d">• TOOL TIKTOK MOD • BẢN MỚI NHẤT</div></div><div class="down">☁️</div></div>
 <div class="card-vip-new file" onclick="openVip()"><div class="fav-btn">♡</div><span style="position:absolute;top:12px;right:58px;background:#ff2e3d;color:#fff;font-size:10px;font-weight:900;padding:4px 10px;border-radius:20px">NEW</span>
-<img class="vip-icon" src="TikTokVIP.jpg.jpg" alt="TikTokVIP" onerror="if(this.src.includes('TikTokVIP.jpg.jpg')){this.src='TikTokVIP.jpg'}else{this.src='https://cdn.pixabay.com/photo/2021/06/15/12/28/tiktok-3338011_1280.png'}">
+<img class="vip-icon" src="TikTokVIP.jpg.jpg" alt="TikTokVIP">
 <div class="vip-info"><div class="vip-title">TIK TOK VIP</div><div class="vip-desc">• ĐỔI ẢNH BÌA, AUTO GIỮ CHUỖI...</div><div class="vip-tags"><div class="tag tag-ios">🍎 v46.7.0</div></div></div><div class="vip-share">↗</div></div>
-<div class="card-vip-new file" onclick="openBbp()"><div class="fav-btn">♡</div><img class="vip-icon" src="8bp.jpg" alt="8BP" onerror="if(!this.dataset.retry){this.dataset.retry=1;this.src='8bp.jpg.jpg'}else{this.src='https://i.imgur.com/8Km9tLL.png'}"><div class="vip-info"><div class="vip-title">iPA MENU NO KEY 8BP</div><div class="vip-desc">• Đã cập nhật 29/8</div><div class="vip-tags"><div class="tag tag-ios">🍎 iOS</div><div class="tag tag-anti">🛡️ Antiban</div></div></div><div class="vip-share">↗</div></div>
-<div class="card-vip-new file" onclick="openYt()"><div class="fav-btn">♡</div>
-<img class="vip-icon" src="ytbPRENIUM.jpg.jpg" alt="YT Premium" onerror="if(this.src.includes('ytbPRENIUM.jpg.jpg')){this.src='YouTubePremium.jpg.jpg'}else{this.src='YouTubePremium.jpg'}">
-<div class="vip-info"><div class="vip-title">YOUTUBE PREMIUM</div><div class="vip-desc">• ĐÃ CẬP NHẬT 9/9</div></div><div class="vip-share">↗</div></div>
+<div class="card-vip-new file" onclick="openBbp()"><div class="fav-btn">♡</div><img class="vip-icon" src="8bp.jpg" alt="8BP"><div class="vip-info"><div class="vip-title">iPA MENU NO KEY 8BP</div><div class="vip-desc">• Đã cập nhật 29/8</div><div class="vip-tags"><div class="tag tag-ios">🍎 iOS</div><div class="tag tag-anti">🛡️ Antiban</div></div></div><div class="vip-share">↗</div></div>
+<div class="card-vip-new file" onclick="openYt()"><div class="fav-btn">♡</div><img class="vip-icon" src="ytbPRENIUM.jpg.jpg" alt="YT Premium" onerror="if(this.src.includes('ytbPRENIUM.jpg.jpg')){this.src='YouTubePremium.jpg.jpg'}"><div class="vip-info"><div class="vip-title">YOUTUBE PREMIUM</div><div class="vip-desc">• ĐÃ CẬP NHẬT 9/9</div></div><div class="vip-share">↗</div></div>
 </div>
 </div>
 
 <div id="overlay" onclick="if(event.target==this)closePopup()"><div id="popup"><div class="popup-head"><div><small>CHỌN PHIÊN BẢN</small><b>GTikTok</b></div><button class="close" onclick="closePopup()">✕</button></div><div class="popup-body"><button class="ver ios" onclick="window.open('https://ipas.cc/0eg1z9','_blank')"><div class="icon"></div><div><b>GTikTok iOS</b><span>iPhone / iPad</span></div><i>›</i></button><button class="ver and" onclick="window.open('https://ipas.cc/h1r87o','_blank')"><div class="icon">🤖</div><div><b>GTikTok Android</b><span>Android (APK)</span></div><i>›</i></button></div></div></div>
-<div id="vipOverlay" onclick="if(event.target==this)closeVip()"><div class="vipPopup"><div class="vip-top"><img src="TikTokVIP.jpg.jpg" alt="TikTokVIP"><div><b>TIK TOK VIP</b><br><small>IPA</small></div><button class="close-vip" onclick="closeVip()">✕</button></div><div class="vip-tabs"><button class="vip-tab active" id="tabChiTiet" onclick="showTab('ct','tiktok')">ℹ️ CHI TIẾT</button><button class="vip-tab" id="tabHd" onclick="showTab('hd','tiktok')">📖 HD SỬ DỤNG</button></div><div class="vip-content" id="ctContent"><div class="vip-row"><div class="ic" style="background:rgba(255,59,122,.15);color:#ff3b7a">❤️</div><p><b>Thả tim:</b> Để lưu file vào mục Yêu thích</p></div><div class="vip-row"><div class="ic" style="background:rgba(14,165,233,.15);color:#0ea5e9">⚙️</div><p>Tất cả file cần chứng chỉ để cài. Liên hệ Admin để mua.</p></div><div class="vip-admin"><button class="btn-admin">👤 ADMIN</button></div></div><div class="vip-content" id="hdContent" style="display:none"><div class="vip-row"><div class="ic">📲</div><p>1. Tải file IPA<br>2. Ký chứng chỉ<br>3. Cài và dùng</p></div></div><button class="btn-tai" onclick="window.open('https://drive.google.com/file/d/1Ih6sa7jrNiMsoASpBCZnqXEsmgekrJcJ/view','_blank')">☁️ TẢI FILE</button></div></div>
-<div id="bbpOverlay" onclick="if(event.target==this)closeBbp()"><div class="vipPopup"><div class="vip-top"><img src="8bp.jpg" alt="8BP"><div><b>iPA MENU NO KEY 8BP</b><br><small>IPA</small></div><button class="close-vip" onclick="closeBbp()">✕</button></div><div class="vip-tabs"><button class="vip-tab active" id="tabChiTiet8" onclick="showTab('ct','8bp')">ℹ️ CHI TIẾT</button><button class="vip-tab" id="tabHd8" onclick="showTab('hd','8bp')">📖 HD SỬ DỤNG</button></div><div class="vip-content" id="ctContent8"><div class="vip-row"><div class="ic" style="background:rgba(255,59,122,.15);color:#ff3b7a">❤️</div><p><b>Thả tim:</b> Để lưu file vào mục Yêu thích nếu sau cần dùng.</p></div><div class="vip-row"><div class="ic" style="background:rgba(14,165,233,.15);color:#0ea5e9">⚙️</div><p>Tất cả các file đều cần chứng chỉ để cài nên anh em muốn cài được thì phải có chứng chỉ. Có thể liên hệ Admin để mua ở nút bên dưới.</p></div><div class="vip-row"><div class="ic" style="background:rgba(251,191,36,.15);color:#fbbf24">☕</div><p>Cần AD hỗ trợ cài thì hãy cho Admin 1 cốc cafe hoặc cốc trà đá tùy tâm mỗi người nhé!!</p></div><div class="vip-admin"><button class="btn-admin" onclick="window.open('https://t.me/nonvansu','_blank')">👤 ADMIN</button></div></div><div class="vip-content" id="hdContent8" style="display:none"><div class="vip-row"><div class="ic">🎱</div><p><b>8 Ball Pool Menu No Key:</b><br>• Auto win, đường kẻ dài<br>• Antiban an toàn<br>1. Tải file<br>2. Ký chứng chỉ qua ESign / GBox<br>3. Cài và chơi!</p></div></div><button class="btn-tai" onclick="window.open('https://drive.usercontent.google.com/download?id=1tFGl0PRDWpSnhK-CcycZ8osa2whryfdl&export=download&authuser=0','_blank')">☁️ TẢI FILE</button></div></div>
-<div id="ytOverlay" onclick="if(event.target==this)closeYt()"><div class="vipPopup"><div class="vip-top"><img src="ytbPRENIUM.jpg.jpg" alt="YT"><div><b>YOUTUBE PREMIUM</b><br><small>IPA</small></div><button class="close-vip" onclick="closeYt()">✕</button></div><div class="vip-tabs"><button class="vip-tab active" id="tabChiTietYt" onclick="showTab('ct','yt')">ℹ️ CHI TIẾT</button><button class="vip-tab" id="tabHdYt" onclick="showTab('hd','yt')">📖 HD SỬ DỤNG</button></div><div class="vip-content" id="ctContentYt"><div class="vip-row"><div class="ic" style="background:rgba(255,59,122,.15);color:#ff3b7a">❤️</div><p><b>Thả tim:</b> Để lưu file vào mục Yêu thích nếu sau cần dùng.</p></div><div class="vip-row"><div class="ic" style="background:rgba(14,165,233,.15);color:#0ea5e9">⚙️</div><p>Tất cả các file đều cần chứng chỉ để cài nên anh em muốn cài được thì phải có chứng chỉ. Có thể liên hệ Admin để mua ở nút bên dưới.</p></div><div class="vip-row"><div class="ic" style="background:rgba(251,191,36,.15);color:#fbbf24">☕</div><p>Cần AD hỗ trợ cài thì hãy cho Admin 1 cốc cafe hoặc cốc trà đá tùy tâm mỗi người nhé!!</p></div><div class="vip-admin"><button class="btn-admin" onclick="window.open('https://t.me/nonvansu','_blank')">👤 ADMIN</button></div></div><div class="vip-content" id="hdContentYt" style="display:none"><div class="vip-row"><div class="ic">📺</div><p><b>YouTube Premium IPA:</b><br>• Không quảng cáo, chạy nền, PiP<br>1. Tải file về<br>2. Ký chứng chỉ qua ESign / GBox / Feather<br>3. Cài và thưởng thức!</p></div></div><button class="btn-tai" onclick="window.open('https://drive.google.com/file/d/1tehV003cNyrHA561eenYUK17Y4t9_0nS/view','_blank')">☁️ TẢI FILE</button></div></div>
+<div id="vipOverlay" onclick="if(event.target==this)closeVip()"><div class="vipPopup"><div class="vip-top"><img src="TikTokVIP.jpg.jpg"><div><b>TIK TOK VIP</b><br><small>IPA</small></div><button class="close-vip" onclick="closeVip()">✕</button></div><div class="vip-tabs"><button class="vip-tab active" id="tabChiTiet" onclick="showTab('ct','tiktok')">ℹ️ CHI TIẾT</button><button class="vip-tab" id="tabHd" onclick="showTab('hd','tiktok')">📖 HD SỬ DỤNG</button></div><div class="vip-content" id="ctContent"><div class="vip-row"><div class="ic" style="background:rgba(255,59,122,.15);color:#ff3b7a">❤️</div><p><b>Thả tim:</b> Để lưu file vào mục Yêu thích</p></div><div class="vip-row"><div class="ic" style="background:rgba(14,165,233,.15);color:#0ea5e9">⚙️</div><p>Tất cả file cần chứng chỉ để cài. Liên hệ Admin để mua.</p></div><div class="vip-admin"><button class="btn-admin">👤 ADMIN</button></div></div><div class="vip-content" id="hdContent" style="display:none"><div class="vip-row"><div class="ic">📲</div><p>1. Tải file IPA<br>2. Ký chứng chỉ<br>3. Cài và dùng</p></div></div><button class="btn-tai" onclick="window.open('https://drive.google.com/file/d/1Ih6sa7jrNiMsoASpBCZnqXEsmgekrJcJ/view','_blank')">☁️ TẢI FILE</button></div></div>
+<div id="bbpOverlay" onclick="if(event.target==this)closeBbp()"><div class="vipPopup"><div class="vip-top"><img src="8bp.jpg"><div><b>iPA MENU NO KEY 8BP</b><br><small>IPA</small></div><button class="close-vip" onclick="closeBbp()">✕</button></div><div class="vip-tabs"><button class="vip-tab active" id="tabChiTiet8" onclick="showTab('ct','8bp')">ℹ️ CHI TIẾT</button><button class="vip-tab" id="tabHd8" onclick="showTab('hd','8bp')">📖 HD SỬ DỤNG</button></div><div class="vip-content" id="ctContent8"><div class="vip-row"><div class="ic" style="background:rgba(255,59,122,.15);color:#ff3b7a">❤️</div><p><b>Thả tim:</b> Để lưu file vào mục Yêu thích</p></div><div class="vip-row"><div class="ic" style="background:rgba(14,165,233,.15);color:#0ea5e9">⚙️</div><p>Tất cả các file đều cần chứng chỉ để cài</p></div><div class="vip-admin"><button class="btn-admin" onclick="window.open('https://t.me/nonvansu','_blank')">👤 ADMIN</button></div></div><div class="vip-content" id="hdContent8" style="display:none"><div class="vip-row"><div class="ic">🎱</div><p><b>8 Ball Pool Menu No Key:</b><br>• Auto win, đường kẻ dài<br>• Antiban an toàn</p></div></div><button class="btn-tai" onclick="window.open('https://drive.usercontent.google.com/download?id=1tFGl0PRDWpSnhK-CcycZ8osa2whryfdl&export=download&authuser=0','_blank')">☁️ TẢI FILE</button></div></div>
+<div id="ytOverlay" onclick="if(event.target==this)closeYt()"><div class="vipPopup"><div class="vip-top"><img src="ytbPRENIUM.jpg.jpg" alt="YT"><div><b>YOUTUBE PREMIUM</b><br><small>IPA</small></div><button class="close-vip" onclick="closeYt()">✕</button></div><div class="vip-tabs"><button class="vip-tab active" id="tabChiTietYt" onclick="showTab('ct','yt')">ℹ️ CHI TIẾT</button><button class="vip-tab" id="tabHdYt" onclick="showTab('hd','yt')">📖 HD SỬ DỤNG</button></div><div class="vip-content" id="ctContentYt"><div class="vip-row"><div class="ic" style="background:rgba(255,59,122,.15);color:#ff3b7a">❤️</div><p><b>Thả tim:</b> Để lưu file vào mục Yêu thích</p></div><div class="vip-row"><div class="ic" style="background:rgba(14,165,233,.15);color:#0ea5e9">⚙️</div><p>Tất cả các file đều cần chứng chỉ để cài</p></div><div class="vip-admin"><button class="btn-admin" onclick="window.open('https://t.me/nonvansu','_blank')">👤 ADMIN</button></div></div><div class="vip-content" id="hdContentYt" style="display:none"><div class="vip-row"><div class="ic">📺</div><p><b>YouTube Premium IPA:</b><br>• Không quảng cáo, chạy nền</p></div></div><button class="btn-tai" onclick="window.open('https://drive.google.com/file/d/1tehV003cNyrHA561eenYUK17Y4t9_0nS/view','_blank')">☁️ TẢI FILE</button></div></div>
 
 <script>
+// MATRIX HACKER EFFECT
+const canvas=document.getElementById('matrix');
+const ctx=canvas.getContext('2d');
+function resize(){canvas.width=window.innerWidth;canvas.height=window.innerHeight;}
+resize();window.addEventListener('resize',resize);
+const letters='01NONVANSU$#@%*+=-';
+const fontSize=14;
+let columns=Math.floor(canvas.width/fontSize);
+let drops=[];
+for(let i=0;i<columns;i++) drops[i]=Math.random()*-100;
+function draw(){
+ctx.fillStyle='rgba(6,6,14,0.08)';
+ctx.fillRect(0,0,canvas.width,canvas.height);
+ctx.fillStyle='#ff2e7a';
+ctx.font=fontSize+'px monospace';
+for(let i=0;i<drops.length;i++){
+const text=letters[Math.floor(Math.random()*letters.length)];
+ctx.fillText(text,i*fontSize,drops[i]*fontSize);
+if(drops[i]*fontSize>canvas.height && Math.random()>0.975) drops[i]=0;
+drops[i]++;
+}
+}
+setInterval(draw,33);
+
 function openPopup(){document.getElementById('overlay').style.display='flex'}
 function closePopup(){document.getElementById('overlay').style.display='none'}
 function openVip(){document.getElementById('vipOverlay').style.display='flex'}
