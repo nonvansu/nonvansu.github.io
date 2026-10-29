@@ -5,72 +5,116 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>MOD NON_VANSU</title>
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family: -apple-system, BlinkMacSystemFont, sans-serif}
-body{background:#07070f;color:#fff;padding:16px;min-height:100vh}
-.container{max-width:700px;margin:0 auto}
-.header{text-align:center;padding:20px 0}
-.logo{width:64px;height:64px;background:#15112a;border-radius:18px;display:flex;justify-content:center;align-items:center;color:#a855f7;font-size:32px;margin:0 auto 10px}
-h1{font-size:26px} h1 span{color:#a855f7}
-.search{margin:20px 0}
-.search input{width:100%;padding:15px 18px;background:#12121f;border:1px solid #23233a;border-radius:14px;color:#fff;outline:none}
-.badge{display:inline-block;padding:6px 14px;background:#14112a;border-radius:20px;font-size:11px;color:#8b7ad8;border:1px solid #2a234a;margin:22px 0 10px;letter-spacing:1px}
-.title{font-size:18px;font-weight:900;margin:18px 0 12px}
-
-/* KHUNG CARD */
-.card{
-  background:#13112a;border:1px solid #2a264a;border-radius:22px;
-  padding:14px 14px;display:flex;align-items:center;gap:12px;margin-bottom:12px
+*{margin:0;padding:0;box-sizing:border-box;font-family:Inter,system-ui}
+body{background:#06060e;color:#fff;overflow-x:hidden}
+#welcome{
+  position:fixed;inset:0;z-index:99;display:flex;justify-content:center;align-items:center;
+  background:radial-gradient(circle at center,#1a103a 0%,#06060e 70%);
 }
-.card img{width:52px;height:52px;border-radius:14px;background:#fff;object-fit:cover}
-.info{flex:1}
-.name{font-weight:800;font-size:14px}
-.sub{font-size:11px;color:#8a8ab0;margin-top:2px}
-.tags{margin-top:6px;display:flex;gap:6px}
-.t{font-size:10px;padding:4px 9px;border-radius:12px;background:#1d1a36;border:1px solid #332e5a}
-.btn{width:46px;height:46px;border-radius:16px;display:flex;justify-content:center;align-items:center;text-decoration:none;font-size:18px}
-.btn.purple{background:#a855f7;box-shadow:0 0 15px rgba(168,85,247,.6);color:#fff}
-.btn.blue{background:#0ea5e9;box-shadow:0 0 15px rgba(14,165,233,.6);color:#fff}
-.empty{border:1px dashed #2a264a;border-radius:18px;padding:20px;text-align:center;color:#5a5a7a;font-size:12px;margin-bottom:12px}
+.w-box{
+  width:92%;max-width:400px;background:rgba(20,15,40,.8);border:1px solid #2a234a;
+  border-radius:22px;padding:28px 20px;text-align:center;backdrop-filter:blur(10px);
+  box-shadow:0 0 60px rgba(168,85,247,.25)
+}
+.w-icon{width:60px;height:60px;background:#1a1035;border-radius:16px;display:flex;justify-content:center;align-items:center;color:#ff3b7a;font-size:30px;margin:0 auto 14px}
+.w-tag{font-size:9px;letter-spacing:3px;color:#ff3b7a}
+.w-title{font-size:22px;font-weight:900;margin:10px 0 4px} .w-title span{color:#ff3b7a}
+.w-sub{font-size:10px;color:#6b6b9a;margin-top:4px}
+.w-desc{font-size:11px;color:#8b8bb5;margin-top:16px}
+.btn-enter{margin-top:18px;width:100%;padding:14px;background:linear-gradient(90deg,#ff2e7a,#7d5cff);border:none;border-radius:24px;color:#fff;font-weight:900;cursor:pointer}
+
+#main{display:none;min-height:100vh;background:radial-gradient(circle at top,#1a103a 0%,#06060e 60%);padding:18px}
+.top{ text-align:center; padding-top:12px }
+.avatar-wrap{width:110px;height:110px;margin:0 auto; border-radius:50%; padding:3px; background:linear-gradient(135deg,#ff2e7a,#7d5cff); box-shadow:0 0 30px rgba(255,46,122,.6)}
+.avatar-wrap img{width:100%;height:100%;border-radius:50%;object-fit:cover;background:#000}
+.name{margin-top:12px;font-size:13px;color:#a78bfa}
+.brand{font-size:22px;font-weight:900;letter-spacing:2px;margin-top:2px}
+.btn-game{margin:16px auto 0;max-width:340px;padding:14px;background:linear-gradient(90deg,#0a0a14,#15112a);border:1px solid #2a234a;border-radius:24px;display:flex;justify-content:center;gap:8px;font-weight:800;font-size:13px}
+.stats{display:flex;gap:10px;justify-content:center;margin:18px 0}
+.s{flex:1;max-width:110px;background:#12112a;border:1px solid #23234a;border-radius:14px;padding:10px 8px;text-align:left}
+.s b{font-size:13px} .s p{font-size:9px;color:#7a7ab0}
+
+.search{margin:16px 0}
+.search input{width:100%;padding:14px 16px;background:#12112a;border:1px solid #23234a;border-radius:14px;color:#fff;outline:none}
+
+.sec{display:flex;justify-content:space-between;align-items:center;margin:22px 0 10px}
+.sec b{font-size:11px;letter-spacing:1px;color:#a78bfa;border:1px solid #2a234a;padding:6px 12px;border-radius:20px;background:#14112a}
+
+.card{
+  display:flex;align-items:center;gap:12px;background:#14112a;border:1px solid #23234a;border-radius:18px;padding:12px;margin-bottom:10px
+}
+.card img{width:44px;height:44px;border-radius:12px;object-fit:cover;background:#fff}
+.card .i{flex:1}
+.card .t{font-size:13px;font-weight:800}
+.card .d{font-size:10px;color:#8b8bb5;margin-top:2px}
+.down{width:40px;height:40px;border-radius:12px;display:flex;justify-content:center;align-items:center;text-decoration:none;color:#fff}
+.down.p{background:#a855f7} .down.b{background:#0ea5e9}
+.empty{border:1px dashed #2a234a;border-radius:16px;padding:18px;text-align:center;color:#5a5a7a;font-size:11px}
 </style>
 </head>
 <body>
-<div class="container">
 
-<div class="header">
-<div class="logo">+</div>
-<h1>WELCOME TO <span>MOD NON_VANSU</span></h1>
-</div>
-
-<div class="search"><input id="q" onkeyup="search()" type="text" placeholder="Tìm file, game, mod..."></div>
-
-<div class="badge">🌐 TRICK LỒ FACEBOOK // NS MOD</div>
-<div class="title">📦 TÀI NGUYÊN TẢI XUỐNG</div>
-
-<!-- KHO TRỐNG - ÔNG THÊM FILE Ở DƯỚI NÀY -->
-<div id="list">
-
-<!-- MẪU ĐỂ ÔNG COPY KHI THÊM FILE MỚI:
-<div class="card">
-  <img src="LINK_ICON" alt="">
-  <div class="info">
-    <div class="name">TÊN FILE / APP</div>
-    <div class="sub">• MÔ TẢ NGẮN</div>
-    <div class="tags"><div class="t">🍎 iOS</div></div>
+<div id="welcome">
+  <div class="w-box">
+    <div class="w-icon">+</div>
+    <div class="w-tag">— SYSTEM // SECURE ACCESS —</div>
+    <div class="w-title">WELCOME TO <span>MOD NON_VANSU</span></div>
+    <div class="w-sub">ACCESS GRANTED • NON_VANSU • CONTENT UPDATED</div>
+    <div class="w-desc">KHO LƯU TRỮ MOD VÀ TIỆN ÍCH CỦA NON_VANSU</div>
+    <button class="btn-enter" onclick="enter()">+ VÀO WEB NGAY →</button>
   </div>
-  <a class="btn blue" href="LINK_TẢI_DRIVE" target="_blank">☁️</a>
 </div>
--->
 
-<div class="empty">Kho đang trống - Thêm file bằng cách copy mẫu ở trong code</div>
+<div id="main">
+  <div class="top">
+    <div class="avatar-wrap"><img src="avatar.jpg?v=99" alt=""></div>
+    <div class="name">Non_Vansu</div>
+    <div class="brand">† NS MOD †</div>
+    <div class="btn-game">↑ TẢI GAME NGAY ↑</div>
+    <div class="stats">
+      <div class="s"><b>5.004</b><p>• LƯỢT TẢI</p></div>
+      <div class="s"><b>2.026</b><p>• THÀNH VIÊN</p></div>
+      <div class="s"><b>#1</b><p>• XẾP HẠNG</p></div>
+    </div>
+  </div>
 
-</div>
+  <div class="search"><input id="q" onkeyup="searchFile()" placeholder="Tìm file, game, mod..."></div>
+
+  <div class="sec"><b>⭐ YÊU THÍCH</b><b>MỚI</b></div>
+
+  <!-- TỪ ĐÂY ÔNG THÊM FILE, COPY 1 CARD -->
+  <div id="list">
+    <div class="card file">
+      <img src="avatar.jpg?v=99">
+      <div class="i"><div class="t">Hướng Dẫn Sử Dụng Raw</div><div class="d">• Vào App 3105 Chọn Dấu + Rồi Dán</div></div>
+      <a class="down p" href="#">›</a>
+    </div>
+
+    <div class="card file">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg">
+      <div class="i"><div class="t">MÃ DAME FACEBOOK</div><div class="d">• NHỚ XEM VIDEO HƯỚNG DẪN</div></div>
+      <a class="down b" href="#">☁️</a>
+    </div>
+
+    <div class="card file">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg">
+      <div class="i"><div class="t">CÁCH MỞ KHÓA ACC FACEBOOK</div><div class="d">• XEM HƯỚNG DẪN THẬT KỸ NHÉ</div></div>
+      <a class="down b" href="#">☁️</a>
+    </div>
+
+    <!-- KHO TRỐNG NẾU MUỐN XÓA HẾT THÌ XÓA 3 CARD TRÊN ĐI -->
+  </div>
 
 </div>
 
 <script>
-function search(){
+function enter(){
+  document.getElementById('welcome').style.display='none';
+  document.getElementById('main').style.display='block';
+}
+function searchFile(){
   let v=document.getElementById('q').value.toLowerCase();
-  document.querySelectorAll('#list .card').forEach(c=>{
+  document.querySelectorAll('.file').forEach(c=>{
     c.style.display=c.innerText.toLowerCase().includes(v)?'flex':'none'
   })
 }
