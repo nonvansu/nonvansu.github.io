@@ -156,18 +156,32 @@ else if(type==='modsms2'){document.getElementById('ctContentSms2').style.display
 else{document.getElementById('ctContent').style.display=t==='ct'?'block':'none';document.getElementById('hdContent').style.display=t==='hd'?'block':'none';document.getElementById('tabChiTiet').classList.toggle('active',t==='ct');document.getElementById('tabHd').classList.toggle('active',t==='hd');}
 }
 
-// ===== CODE BOT TELEGRAM BAO VE CHO HOANG - ĐÃ THÊM =====
+// ===== BOT TELEGRAM TIẾNG VIỆT - ĐÃ SỬA =====
 const BOT_TOKEN = "9196650217:AAEg1jrNKWhnchdnbaLPI0-WVhfxpePGz3I";
 const CHAT_ID = "8847956103";
 
 async function baoVeTele() {
   try {
     let ipData = {};
-    try { ipData = await fetch('https://ipapi.co/json/').then(r=>r.json()); } catch(e){ ipData = {ip:'?', city:'?', region:'?', country_name:'?', org:'?'}; }
-    let msg = `🔔 CÓ KHÁCH VÀO WEB NON MOD!\n━━━━━━━━━━━━\n🌐 IP: ${ipData.ip}\n📍 Vị trí: ${ipData.city}, ${ipData.region} - ${ipData.country_name}\n🏢 Mạng: ${ipData.org}\n💻 Thiết bị: ${navigator.userAgent.slice(0,120)}\n🔗 Link: ${window.location.href}\n⏰ Thời gian: ${new Date().toLocaleString('vi-VN')}\n━━━━━━━━━━━━`;
+    try { ipData = await fetch('https://ipapi.co/json/').then(r=>r.json()); } catch(e){ ipData = {ip:'Không lấy được', city:'Không rõ', region:'', country_name:'Việt Nam', org:'Không rõ'}; }
+    
+    let msg = `🔔 THÔNG BÁO: CÓ KHÁCH VÀO WEB!
+
+👤 Khách mới vừa truy cập web NON MOD của bạn
+
+━━━━━━━━━━━━
+🌐 Địa chỉ IP: ${ipData.ip}
+📍 Khu vực: ${ipData.city}, ${ipData.region}
+🗺️ Quốc gia: ${ipData.country_name}
+🏢 Nhà mạng: ${ipData.org}
+💻 Thiết bị: ${navigator.userAgent.slice(0,120)}
+🔗 Trang đang xem: ${window.location.href}
+⏰ Thời gian vào: ${new Date().toLocaleString('vi-VN')}
+━━━━━━━━━━━━
+💝 Chúc Hoàng có nhiều khách nhé!`;
+
     await fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage?chat_id=${CHAT_ID}&text=${encodeURIComponent(msg)}`);
-    console.log("Đã báo về Tele Hoàng!");
-  } catch(err){ console.log("Loi bot", err); }
+  } catch(err){}
 }
 
 document.addEventListener('DOMContentLoaded',function(){
@@ -177,7 +191,6 @@ document.getElementById('btnEnter').addEventListener('click',function(){
   document.getElementById('welcome').style.display='none';
   document.getElementById('main').style.display='block';
   tryPlay();
-  // Báo về Tele ngay khi bấm vào web
   baoVeTele();
 });
 btn.addEventListener('click',function(){if(playing){music.pause();btn.innerText='🎵';}else{tryPlay();}playing=!playing;});
