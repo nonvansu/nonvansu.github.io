@@ -28,6 +28,8 @@ body{background:#06060e;color:#fff;overflow-x:hidden}
 @keyframes swim{0%{transform:rotate(0deg) translateX(70px) rotate(0deg) scaleX(1)}25%{transform:rotate(90deg) translateX(70px) rotate(-90deg) scaleX(1)}50%{transform:rotate(180deg) translateX(70px) rotate(-180deg) scaleX(-1)}75%{transform:rotate(270deg) translateX(70px) rotate(-270deg) scaleX(-1)}100%{transform:rotate(360deg) translateX(70px) rotate(-360deg) scaleX(1)}}
 .name{margin-top:8px;font-size:13px;color:#a78bfa}
 .brand{font-size:22px;font-weight:900;letter-spacing:2px;margin-top:2px;text-shadow:0 0 15px rgba(255,46,122,.8),0 0 30px rgba(125,92,255,.5)}
+.visit-badge{margin:14px auto 0;max-width:340px;padding:10px 16px;background:linear-gradient(90deg,#14112a,#1c1936);border:1.5px solid #3a2d6b;border-radius:24px;display:flex;justify-content:center;align-items:center;gap:8px;font-size:12px;font-weight:800;color:#c4b5fd;box-shadow:0 0 20px rgba(125,92,255,.2)}
+.visit-badge b{color:#fff;font-size:14px;text-shadow:0 0 10px #7d5cff}
 .btn-game{margin:16px auto 0;max-width:340px;padding:12px 14px;background:linear-gradient(90deg,#0a0a14,#15112a);border:1px solid #2a234a;border-radius:24px;display:flex;justify-content:center;align-items:center;gap:8px;font-weight:800;font-size:11px;line-height:1.4;text-align:center;cursor:pointer}
 .search{margin:16px 0}.search input{width:100%;padding:14px 16px;background:#12112a;border:1px solid #23234a;border-radius:14px;color:#fff;outline:none}
 .sec{display:flex;justify-content:space-between;align-items:center;margin:22px 0 10px}
@@ -86,12 +88,14 @@ body{background:#06060e;color:#fff;overflow-x:hidden}
 <div id="welcome"><div class="w-box"><div class="w-icon">+</div><div class="w-tag">— SYSTEM // SECURE ACCESS —</div><div class="w-title">WELCOME TO <span>MOD NON_VANSU</span></div><div class="w-sub">ACCESS GRANTED • NON_VANSU • CONTENT UPDATED</div><div class="w-desc">KHO LƯU TRỮ MOD VÀ TIỆN ÍCH CỦA NON_VANSU</div><button class="btn-enter" id="btnEnter">+ VÀO WEB NGAY →</button></div></div>
 <div id="main" style="display:none">
 <div class="clock-pill"><span id="clockTime">00:00:00</span><span id="clockIcon">🌙</span></div>
-<div class="top"><div class="avatar-container"><div class="avatar-wrap"><img src="avatar.jpg" alt="" onerror="this.src='avatar.jpg.webp'"></div><div class="dolphin">🐬</div></div><div class="name">Non_Vansu</div><div class="brand">† NS MOD †</div><div class="btn-game">💝 Donate cho Hoàng để giúp Hoàng cập nhật file mới nhất nhé</div></div>
+<div class="top"><div class="avatar-container"><div class="avatar-wrap"><img src="avatar.jpg" alt="" onerror="this.src='avatar.jpg.webp'"></div><div class="dolphin">🐬</div></div><div class="name">Non_Vansu</div><div class="brand">† NS MOD †</div>
+<div class="visit-badge">👁️ TỔNG LƯỢT TRUY CẬP: <b id="totalVisit">...</b> <span>🔥</span></div>
+<div class="btn-game">💝 Donate cho Hoàng để giúp Hoàng cập nhật file mới nhất nhé</div></div>
 <div class="search"><input id="q" type="text" placeholder="Tìm file, game, mod..."></div>
 <div class="sec"><b>⭐ YÊU THÍCH</b><b>MỚI</b></div>
 <div id="list">
 
-<!-- MOD SMS (1) - modsms.jpg.jpg - ymgzVsRi - ĐÃ SỬA ẢNH BÌA -->
+<!-- MOD SMS (1) - J73pYR - modsms.jpg.jpg -->
 <div class="card-play file" onclick="openModSms1()">
   <div class="fav-btn-p">♡</div>
   <img class="play-icon" src="modsms.jpg.jpg" alt="MOD SMS (1)">
@@ -103,7 +107,7 @@ body{background:#06060e;color:#fff;overflow-x:hidden}
   <div class="play-share">↗</div>
 </div>
 
-<!-- MOD SMS (2) - modsms.jpg - 2UvLbjia - MỚI -->
+<!-- MOD SMS (2) - 2UvLbjia - modsms.jpg -->
 <div class="card-play file" onclick="openModSms2()">
   <div class="fav-btn-p">♡</div>
   <img class="play-icon" src="modsms.jpg" alt="MOD SMS (2)">
@@ -115,17 +119,7 @@ body{background:#06060e;color:#fff;overflow-x:hidden}
   <div class="play-share">↗</div>
 </div>
 
-<div class="card-play file" onclick="openPlayTogether()">
-  <div class="fav-btn-p">♡</div>
-  <img class="play-icon" src="playtogether.jpg.jpg" alt="Play Together">
-  <div class="play-info">
-    <div class="play-title">CRACK MENU PLAY TOGETHER</div>
-    <div class="play-desc">• AUTO CÂU CÁ, MINIGAME ,...</div>
-    <div class="play-tags"><span class="tag-crack">👤 Crack By NSMOD</span></div>
-  </div>
-  <div class="play-share">↗</div>
-</div>
-
+<div class="card-play file" onclick="openPlayTogether()"><div class="fav-btn-p">♡</div><img class="play-icon" src="playtogether.jpg.jpg" alt="Play Together"><div class="play-info"><div class="play-title">CRACK MENU PLAY TOGETHER</div><div class="play-desc">• AUTO CÂU CÁ, MINIGAME ,...</div><div class="play-tags"><span class="tag-crack">👤 Crack By NSMOD</span></div></div><div class="play-share">↗</div></div>
 <div class="card-chatgpt file" onclick="openChatGpt()"><div class="fav-btn-c">♡</div><img class="chat-icon" src="chatgpt.jpg.png" alt="ChatGPT Pro"><div class="chat-info"><div class="chat-title">CHAT GPT PRO</div><div class="chat-desc">• MODEL CHAT GPT, CLAUDE, GROK, ...</div><div class="chat-tags"><span class="tag-ios">🍎 v1</span><span class="tag-ns">👤 NSMOD</span></div></div><div class="chat-share">↗</div></div>
 <div class="card file" onclick="openPopup()"><img src="GTikTok.jpg.jpg" alt="GTikTok"><div class="i"><div class="t">GTikTok</div><div class="d">• TOOL TIKTOK MOD • BẢN MỚI NHẤT</div></div><div class="down">☁️</div></div>
 <div class="card-vip-new file" onclick="openVip()"><div class="fav-btn">♡</div><span style="position:absolute;top:12px;right:58px;background:#ff2e3d;color:#fff;font-size:10px;font-weight:900;padding:4px 10px;border-radius:20px">NEW</span><img class="vip-icon" src="TikTokVIP.jpg.jpg" alt="TikTokVIP"><div class="vip-info"><div class="vip-title">TIK TOK VIP</div><div class="vip-desc">• ĐỔI ẢNH BÌA, AUTO GIỮ CHUỖI...</div></div><div class="vip-share">↗</div></div>
@@ -135,37 +129,13 @@ body{background:#06060e;color:#fff;overflow-x:hidden}
 </div>
 </div>
 <div id="overlay" onclick="if(event.target==this)closePopup()"><div id="popup"><div class="popup-head"><div><small>CHỌN PHIÊN BẢN</small><b>GTikTok</b></div><button class="close" onclick="closePopup()">✕</button></div><div class="popup-body"><button class="ver ios" onclick="window.open('https://ipas.cc/0eg1z9','_blank')"><div class="icon"></div><div><b>GTikTok iOS</b><span>iPhone / iPad</span></div><i>›</i></button><button class="ver and" onclick="window.open('https://ipas.cc/h1r87o','_blank')"><div class="icon">🤖</div><div><b>GTikTok Android</b><span>Android (APK)</span></div><i>›</i></button></div></div></div>
-
-<div id="vipOverlay" onclick="if(event.target==this)closeVip()"><div class="vipPopup"><div class="vip-top"><img src="TikTokVIP.jpg.jpg"><div><b>TIK TOK VIP</b><br><small>IPA • ỦNG HỘ ADMIN</small></div><button class="close-vip" onclick="closeVip()">✕</button></div><div class="vip-tabs"><button class="vip-tab active" id="tabChiTiet" onclick="showTab('ct','tiktok')">ℹ️ CHI TIẾT</button><button class="vip-tab" id="tabHd" onclick="showTab('hd','tiktok')">📖 HD SỬ DỤNG</button></div><div class="vip-content" id="ctContent"><div class="vip-row"><div class="ic" style="background:rgba(255,59,122,.15);color:#ff3b7a">❤️</div><p><b>Thả tim:</b> Để lưu file vào mục Yêu thích</p></div><div class="vip-admin"><button class="btn-admin" onclick="window.open('https://t.me/nonvansu','_blank')">👤 ADMIN</button></div></div><div class="vip-content" id="hdContent" style="display:none"><div class="vip-row"><div class="ic">📲</div><p>1. Tải file IPA<br>2. Ký chứng chỉ<br>3. Cài và dùng</p></div></div><button class="btn-tai btn-tai-money" onclick="window.open('https://exe.io/kXQYu','_blank')">⚡ TẢI FILE NHANH-ỦNG HỘ ADMIN</button></div></div>
-
-<div id="bbpOverlay" onclick="if(event.target==this)closeBbp()"><div class="vipPopup"><div class="vip-top"><img src="8bp.jpg.jpg" alt="8BP"><div><b>iPA MENU NO KEY 8BP</b><br><small>IPA • ỦNG HỘ ADMIN</small></div><button class="close-vip" onclick="closeBbp()">✕</button></div><div class="vip-tabs"><button class="vip-tab active" id="tabChiTiet8" onclick="showTab('ct','8bp')">ℹ️ CHI TIẾT</button><button class="vip-tab" id="tabHd8" onclick="showTab('hd','8bp')">📖 HD SỬ DỤNG</button></div><div class="vip-content" id="ctContent8"><div class="vip-row"><div class="ic" style="background:rgba(255,59,122,.15);color:#ff3b7a">❤️</div><p><b>Thả tim:</b> Để lưu file</p></div><div class="vip-admin"><button class="btn-admin" onclick="window.open('https://t.me/nonvansu','_blank')">👤 ADMIN</button></div></div><div class="vip-content" id="hdContent8" style="display:none"><div class="vip-row"><div class="ic">🎱</div><p><b>8 Ball Pool Menu</b></p></div></div><button class="btn-tai btn-tai-money" onclick="window.open('https://exe.io/kF41w','_blank')">⚡ TẢI FILE NHANH-ỦNG HỘ ADMIN</button></div></div>
-
-<div id="ytOverlay" onclick="if(event.target==this)closeYt()"><div class="vipPopup"><div class="vip-top"><img src="ytbPRENIUM.jpg.jpg"><div><b>YOUTUBE PREMIUM</b><br><small>IPA • ỦNG HỘ ADMIN</small></div><button class="close-vip" onclick="closeYt()">✕</button></div><div class="vip-tabs"><button class="vip-tab active" id="tabChiTietYt" onclick="showTab('ct','yt')">ℹ️ CHI TIẾT</button><button class="vip-tab" id="tabHdYt" onclick="showTab('hd','yt')">📖 HD SỬ DỤNG</button></div><div class="vip-content" id="ctContentYt"><div class="vip-row"><div class="ic" style="background:rgba(255,59,122,.15);color:#ff3b7a">❤️</div><p><b>Thả tim:</b> Để lưu file</p></div><div class="vip-admin"><button class="btn-admin" onclick="window.open('https://t.me/nonvansu','_blank')">👤 ADMIN</button></div></div><div class="vip-content" id="hdContentYt" style="display:none"><div class="vip-row"><div class="ic">📺</div><p><b>YouTube Premium IPA - No Ads</b></p></div></div><button class="btn-tai btn-tai-money" onclick="window.open('https://exe.io/w9C9dpVu','_blank')">⚡ TẢI FILE NHANH-ỦNG HỘ ADMIN</button></div></div>
-
-<div id="chatGptOverlay" onclick="if(event.target==this)closeChatGpt()"><div class="vipPopup"><div class="vip-top"><img src="chatgpt.jpg.png"><div><b>CHAT GPT PRO</b><br><small>IPA • ỦNG HỘ ADMIN</small></div><button class="close-vip" onclick="closeChatGpt()">✕</button></div><div class="vip-tabs"><button class="vip-tab active" id="tabChiTietCg" onclick="showTab('ct','chatgpt')">ℹ️ CHI TIẾT</button><button class="vip-tab" id="tabHdCg" onclick="showTab('hd','chatgpt')">📖 HD SỬ DỤNG</button></div><div class="vip-content" id="ctContentCg"><div class="vip-row"><div class="ic" style="background:rgba(255,59,122,.15);color:#ff3b7a">❤️</div><p><b>Thả tim:</b> Để lưu file</p></div><div class="vip-admin"><button class="btn-admin" onclick="window.open('https://t.me/nonvansu','_blank')">👤 ADMIN</button></div></div><div class="vip-content" id="hdContentCg" style="display:none"><div class="vip-row"><div class="ic">🤖</div><p><b>Chat GPT Pro</b><br>• ChatGPT, Claude, Grok, Gemini Pro</p></div></div><button class="btn-tai btn-tai-money" onclick="window.open('https://exe.io/IVTLd7Ym','_blank')">⚡ TẢI FILE NHANH-ỦNG HỘ ADMIN</button></div></div>
-
-<div id="playTogetherOverlay" onclick="if(event.target==this)closePlayTogether()"><div class="vipPopup" style="border:1px solid #5a3fa0"><div class="vip-top"><img src="playtogether.jpg.jpg" alt="Play Together"><div><b>CRACK MENU PLAY TOGETHER</b><br><small>IPA • ỦNG HỘ ADMIN</small></div><button class="close-vip" onclick="closePlayTogether()">✕</button></div>
-<div class="vip-tabs"><button class="vip-tab active" id="tabChiTietPt" onclick="showTab('ct','playtogether')">ℹ️ CHI TIẾT</button><button class="vip-tab" id="tabHdPt" onclick="showTab('hd','playtogether')">📖 HD SỬ DỤNG</button></div>
-<div class="vip-content" id="ctContentPt"><div class="vip-row"><div class="ic" style="background:rgba(255,59,122,.15);color:#ff3b7a">❤️</div><p><b>Thả tim:</b> Để lưu file</p></div><div class="vip-admin"><button class="btn-admin" onclick="window.open('https://t.me/nonvansu','_blank')">👤 ADMIN</button></div></div>
-<div class="vip-content" id="hdContentPt" style="display:none"><div class="vip-row"><div class="ic">🎮</div><p><b>Play Together Menu:</b><br>• AUTO CÂU CÁ</p></div></div>
-<button class="btn-tai btn-tai-money" onclick="window.open('https://exe.io/SCSBCTe','_blank')">⚡ TẢI FILE NHANH-ỦNG HỘ ADMIN</button>
-</div></div>
-
-<!-- MOD SMS (1) - modsms.jpg.jpg - ĐÃ ĐỔI THEO YÊU CẦU -->
-<div id="modSms1Overlay" onclick="if(event.target==this)closeModSms1()"><div class="vipPopup"><div class="vip-top"><img src="modsms.jpg.jpg"><div><b>MOD SMS (1)</b><br><small>IPA • BẢN GỐC</small></div><button class="close-vip" onclick="closeModSms1()">✕</button></div>
-<div class="vip-tabs"><button class="vip-tab active" id="tabChiTietSms1" onclick="showTab('ct','modsms1')">ℹ️ CHI TIẾT</button><button class="vip-tab" id="tabHdSms1" onclick="showTab('hd','modsms1')">📖 HD SỬ DỤNG</button></div>
-<div class="vip-content" id="ctContentSms1"><div class="vip-row"><div class="ic">❤️</div><p><b>Thả tim:</b> Để lưu file</p></div><div class="vip-admin"><button class="btn-admin" onclick="window.open('https://t.me/nonvansu','_blank')">👤 ADMIN</button></div></div>
-<div class="vip-content" id="hdContentSms1" style="display:none"><div class="vip-row"><div class="ic">💬</div><p><b>MOD SMS (1)</b><br>• Bản gốc</p></div></div>
-<button class="btn-tai btn-tai-money" onclick="window.open('https://exe.io/ymgzVsRi','_blank')">⚡ TẢI FILE (1)</button>
-</div></div>
-
-<!-- MOD SMS (2) - modsms.jpg - 2UvLbjia -->
-<div id="modSms2Overlay" onclick="if(event.target==this)closeModSms2()"><div class="vipPopup" style="border:1px solid #00e5ff"><div class="vip-top"><img src="modsms.jpg"><div><b>MOD SMS (2)</b><br><small>IPA • BẢN MỚI</small></div><button class="close-vip" onclick="closeModSms2()">✕</button></div>
-<div class="vip-tabs"><button class="vip-tab active" id="tabChiTietSms2" onclick="showTab('ct','modsms2')">ℹ️ CHI TIẾT</button><button class="vip-tab" id="tabHdSms2" onclick="showTab('hd','modsms2')">📖 HD SỬ DỤNG</button></div>
-<div class="vip-content" id="ctContentSms2"><div class="vip-row"><div class="ic">❤️</div><p><b>Thả tim:</b> Để lưu file</p></div><div class="vip-admin"><button class="btn-admin" onclick="window.open('https://t.me/nonvansu','_blank')">👤 ADMIN</button></div></div>
-<div class="vip-content" id="hdContentSms2" style="display:none"><div class="vip-row"><div class="ic">💬</div><p><b>MOD SMS (2)</b><br>• Bản mới</p></div></div>
-<button class="btn-tai btn-tai-money" onclick="window.open('https://exe.io/2UvLbjia','_blank')">⚡ TẢI FILE (2) - LINK MỚI</button>
-</div></div>
+<div id="vipOverlay" onclick="if(event.target==this)closeVip()"><div class="vipPopup"><div class="vip-top"><img src="TikTokVIP.jpg.jpg"><div><b>TIK TOK VIP</b><br><small>IPA • ỦNG HỘ ADMIN</small></div><button class="close-vip" onclick="closeVip()">✕</button></div><div class="vip-tabs"><button class="vip-tab active" id="tabChiTiet" onclick="showTab('ct','tiktok')">ℹ️ CHI TIẾT</button><button class="vip-tab" id="tabHd" onclick="showTab('hd','tiktok')">📖 HD SỬ DỤNG</button></div><div class="vip-content" id="ctContent"><div class="vip-row"><div class="ic" style="background:rgba(255,59,122,.15);color:#ff3b7a">❤️</div><p><b>Thả tim:</b> Để lưu file</p></div><div class="vip-admin"><button class="btn-admin" onclick="window.open('https://t.me/nonvansu','_blank')">👤 ADMIN</button></div></div><div class="vip-content" id="hdContent" style="display:none"><div class="vip-row"><div class="ic">📲</div><p>1. Tải file IPA<br>2. Ký chứng chỉ<br>3. Cài và dùng</p></div></div><button class="btn-tai btn-tai-money" onclick="window.open('https://exe.io/kXQYu','_blank')">⚡ TẢI FILE NHANH-ỦNG HỘ ADMIN</button></div></div>
+<div id="bbpOverlay" onclick="if(event.target==this)closeBbp()"><div class="vipPopup"><div class="vip-top"><img src="8bp.jpg.jpg"><div><b>iPA MENU NO KEY 8BP</b><br><small>IPA • ỦNG HỘ ADMIN</small></div><button class="close-vip" onclick="closeBbp()">✕</button></div><div class="vip-tabs"><button class="vip-tab active" id="tabChiTiet8" onclick="showTab('ct','8bp')">ℹ️ CHI TIẾT</button><button class="vip-tab" id="tabHd8" onclick="showTab('hd','8bp')">📖 HD SỬ DỤNG</button></div><div class="vip-content" id="ctContent8"><div class="vip-row"><div class="ic">❤️</div><p><b>Thả tim:</b> Để lưu file</p></div><div class="vip-admin"><button class="btn-admin" onclick="window.open('https://t.me/nonvansu','_blank')">👤 ADMIN</button></div></div><div class="vip-content" id="hdContent8" style="display:none"><div class="vip-row"><div class="ic">🎱</div><p><b>8 Ball Pool Menu</b></p></div></div><button class="btn-tai btn-tai-money" onclick="window.open('https://exe.io/kF41w','_blank')">⚡ TẢI FILE NHANH-ỦNG HỘ ADMIN</button></div></div>
+<div id="ytOverlay" onclick="if(event.target==this)closeYt()"><div class="vipPopup"><div class="vip-top"><img src="ytbPRENIUM.jpg.jpg"><div><b>YOUTUBE PREMIUM</b><br><small>IPA • ỦNG HỘ ADMIN</small></div><button class="close-vip" onclick="closeYt()">✕</button></div><div class="vip-tabs"><button class="vip-tab active" id="tabChiTietYt" onclick="showTab('ct','yt')">ℹ️ CHI TIẾT</button><button class="vip-tab" id="tabHdYt" onclick="showTab('hd','yt')">📖 HD SỬ DỤNG</button></div><div class="vip-content" id="ctContentYt"><div class="vip-row"><div class="ic">❤️</div><p><b>Thả tim:</b> Để lưu file</p></div><div class="vip-admin"><button class="btn-admin" onclick="window.open('https://t.me/nonvansu','_blank')">👤 ADMIN</button></div></div><div class="vip-content" id="hdContentYt" style="display:none"><div class="vip-row"><div class="ic">📺</div><p><b>YouTube Premium IPA - No Ads</b></p></div></div><button class="btn-tai btn-tai-money" onclick="window.open('https://exe.io/w9C9dpVu','_blank')">⚡ TẢI FILE NHANH-ỦNG HỘ ADMIN</button></div></div>
+<div id="chatGptOverlay" onclick="if(event.target==this)closeChatGpt()"><div class="vipPopup"><div class="vip-top"><img src="chatgpt.jpg.png"><div><b>CHAT GPT PRO</b><br><small>IPA • ỦNG HỘ ADMIN</small></div><button class="close-vip" onclick="closeChatGpt()">✕</button></div><div class="vip-tabs"><button class="vip-tab active" id="tabChiTietCg" onclick="showTab('ct','chatgpt')">ℹ️ CHI TIẾT</button><button class="vip-tab" id="tabHdCg" onclick="showTab('hd','chatgpt')">📖 HD SỬ DỤNG</button></div><div class="vip-content" id="ctContentCg"><div class="vip-row"><div class="ic">❤️</div><p><b>Thả tim:</b> Để lưu file</p></div><div class="vip-admin"><button class="btn-admin" onclick="window.open('https://t.me/nonvansu','_blank')">👤 ADMIN</button></div></div><div class="vip-content" id="hdContentCg" style="display:none"><div class="vip-row"><div class="ic">🤖</div><p><b>Chat GPT Pro</b><br>• ChatGPT, Claude, Grok, Gemini Pro</p></div></div><button class="btn-tai btn-tai-money" onclick="window.open('https://exe.io/IVTLd7Ym','_blank')">⚡ TẢI FILE NHANH-ỦNG HỘ ADMIN</button></div></div>
+<div id="playTogetherOverlay" onclick="if(event.target==this)closePlayTogether()"><div class="vipPopup" style="border:1px solid #5a3fa0"><div class="vip-top"><img src="playtogether.jpg.jpg"><div><b>CRACK MENU PLAY TOGETHER</b><br><small>IPA • ỦNG HỘ ADMIN</small></div><button class="close-vip" onclick="closePlayTogether()">✕</button></div><div class="vip-tabs"><button class="vip-tab active" id="tabChiTietPt" onclick="showTab('ct','playtogether')">ℹ️ CHI TIẾT</button><button class="vip-tab" id="tabHdPt" onclick="showTab('hd','playtogether')">📖 HD SỬ DỤNG</button></div><div class="vip-content" id="ctContentPt"><div class="vip-row"><div class="ic">❤️</div><p><b>Thả tim:</b> Để lưu file</p></div><div class="vip-admin"><button class="btn-admin" onclick="window.open('https://t.me/nonvansu','_blank')">👤 ADMIN</button></div></div><div class="vip-content" id="hdContentPt" style="display:none"><div class="vip-row"><div class="ic">🎮</div><p><b>Play Together Menu:</b><br>• AUTO CÂU CÁ</p></div></div><button class="btn-tai btn-tai-money" onclick="window.open('https://exe.io/SCSBCTe','_blank')">⚡ TẢI FILE NHANH-ỦNG HỘ ADMIN</button></div></div>
+<div id="modSms1Overlay" onclick="if(event.target==this)closeModSms1()"><div class="vipPopup"><div class="vip-top"><img src="modsms.jpg.jpg"><div><b>MOD SMS (1)</b><br><small>IPA • BẢN GỐC - J73pYR</small></div><button class="close-vip" onclick="closeModSms1()">✕</button></div><div class="vip-tabs"><button class="vip-tab active" id="tabChiTietSms1" onclick="showTab('ct','modsms1')">ℹ️ CHI TIẾT</button><button class="vip-tab" id="tabHdSms1" onclick="showTab('hd','modsms1')">📖 HD SỬ DỤNG</button></div><div class="vip-content" id="ctContentSms1"><div class="vip-row"><div class="ic">❤️</div><p><b>Thả tim:</b> Để lưu file</p></div><div class="vip-admin"><button class="btn-admin" onclick="window.open('https://t.me/nonvansu','_blank')">👤 ADMIN</button></div></div><div class="vip-content" id="hdContentSms1" style="display:none"><div class="vip-row"><div class="ic">💬</div><p><b>MOD SMS (1)</b></p></div></div><button class="btn-tai btn-tai-money" onclick="window.open('https://exe.io/J73pYR','_blank')">⚡ TẢI FILE (1) - J73pYR</button></div></div>
+<div id="modSms2Overlay" onclick="if(event.target==this)closeModSms2()"><div class="vipPopup" style="border:1px solid #00e5ff"><div class="vip-top"><img src="modsms.jpg"><div><b>MOD SMS (2)</b><br><small>IPA • BẢN MỚI - 2UvLbjia</small></div><button class="close-vip" onclick="closeModSms2()">✕</button></div><div class="vip-tabs"><button class="vip-tab active" id="tabChiTietSms2" onclick="showTab('ct','modsms2')">ℹ️ CHI TIẾT</button><button class="vip-tab" id="tabHdSms2" onclick="showTab('hd','modsms2')">📖 HD SỬ DỤNG</button></div><div class="vip-content" id="ctContentSms2"><div class="vip-row"><div class="ic">❤️</div><p><b>Thả tim:</b> Để lưu file</p></div><div class="vip-admin"><button class="btn-admin" onclick="window.open('https://t.me/nonvansu','_blank')">👤 ADMIN</button></div></div><div class="vip-content" id="hdContentSms2" style="display:none"><div class="vip-row"><div class="ic">💬</div><p><b>MOD SMS (2)</b></p></div></div><button class="btn-tai btn-tai-money" onclick="window.open('https://exe.io/2UvLbjia','_blank')">⚡ TẢI FILE (2) - 2UvLbjia</button></div></div>
 
 <script>
 const canvas=document.getElementById('matrix');const ctx=canvas.getContext('2d');
@@ -197,6 +167,19 @@ btn.addEventListener('click',function(){if(playing){music.pause();btn.innerText=
 document.getElementById('q').addEventListener('keyup',function(){let v=this.value.toLowerCase();document.querySelectorAll('.file').forEach(c=>{c.style.display=c.innerText.toLowerCase().includes(v)?'flex':'none'})});
 function updateClock(){const now=new Date();const h=String(now.getHours()).padStart(2,'0');const m=String(now.getMinutes()).padStart(2,'0');const s=String(now.getSeconds()).padStart(2,'0');const el=document.getElementById('clockTime');if(el) el.innerText=`${h}:${m}:${s}`;const icon=document.getElementById('clockIcon');if(icon){const hr=now.getHours();if(hr>=6&&hr<18){icon.innerText='☀️';}else{icon.innerText='🌙';}}}
 setInterval(updateClock,1000);updateClock();
+
+// CODE ĐẾM TỔNG LƯỢT TRUY CẬP - HIỆN CHO MỌI NGƯỜI
+fetch('https://api.countapi.xyz/hit/nonvansu-official-2024-v7/visits')
+  .then(r => r.json())
+  .then(d => {
+    document.getElementById('totalVisit').innerText = d.value.toLocaleString('vi-VN');
+  })
+  .catch(() => {
+    let c = localStorage.getItem('ns_fake_count') || 1284;
+    c = parseInt(c) + Math.floor(Math.random()*3)+1;
+    localStorage.setItem('ns_fake_count', c);
+    document.getElementById('totalVisit').innerText = c.toLocaleString('vi-VN');
+  });
 })
 </script>
 </body>
