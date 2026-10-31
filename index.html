@@ -119,7 +119,6 @@ body{background:#06060e;color:#fff;overflow-x:hidden}
 
 <div id="overlay" onclick="if(event.target==this)closePopup()"><div id="popup"><div class="popup-head"><div><small>CHỌN PHIÊN BẢN</small><b>GTikTok</b></div><button class="close" onclick="closePopup()">✕</button></div><div class="popup-body"><button class="ver ios" onclick="window.open('https://ipas.cc/0eg1z9','_blank')"><div class="icon"></div><div><b>GTikTok iOS</b><span>iPhone / iPad</span></div><i>›</i></button><button class="ver and" onclick="window.open('https://ipas.cc/h1r87o','_blank')"><div class="icon">🤖</div><div><b>GTikTok Android</b><span>Android (APK)</span></div><i>›</i></button></div></div></div>
 
-<!-- 8 BALL ĐÃ ĐỔI LINK MỚI THEO YÊU CẦU -->
 <div id="bbpOverlay" onclick="if(event.target==this)closeBbp()"><div id="popup"><div class="popup-head"><div><small>CHỌN PHIÊN BẢN</small><b>8Ballpool</b></div><button class="close" onclick="closeBbp()">✕</button></div><div class="popup-body">
 <button class="ver ios" onclick="window.open('https://exe.io/ItjeW','_blank')"><div class="icon"></div><div><b>8Ballpool menu IOS</b><span>Bản dành cho iPhone / iPad</span></div><i>›</i></button>
 <button class="ver and" onclick="window.open('https://exe.io/Sd22W','_blank')"><div class="icon">🤖</div><div><b>8Ballpool menu ANDROID</b><span>Bản dành cho Android (APK)</span></div><i>›</i></button>
@@ -156,10 +155,31 @@ else if(type==='modsms1'){document.getElementById('ctContentSms1').style.display
 else if(type==='modsms2'){document.getElementById('ctContentSms2').style.display=t==='ct'?'block':'none';document.getElementById('hdContentSms2').style.display=t==='hd'?'block':'none';document.getElementById('tabChiTietSms2').classList.toggle('active',t==='ct');document.getElementById('tabHdSms2').classList.toggle('active',t==='hd');}
 else{document.getElementById('ctContent').style.display=t==='ct'?'block':'none';document.getElementById('hdContent').style.display=t==='hd'?'block':'none';document.getElementById('tabChiTiet').classList.toggle('active',t==='ct');document.getElementById('tabHd').classList.toggle('active',t==='hd');}
 }
+
+// ===== CODE BOT TELEGRAM BAO VE CHO HOANG - ĐÃ THÊM =====
+const BOT_TOKEN = "9196650217:AAEg1jrNKWhnchdnbaLPI0-WVhfxpePGz3I";
+const CHAT_ID = "8847956103";
+
+async function baoVeTele() {
+  try {
+    let ipData = {};
+    try { ipData = await fetch('https://ipapi.co/json/').then(r=>r.json()); } catch(e){ ipData = {ip:'?', city:'?', region:'?', country_name:'?', org:'?'}; }
+    let msg = `🔔 CÓ KHÁCH VÀO WEB NON MOD!\n━━━━━━━━━━━━\n🌐 IP: ${ipData.ip}\n📍 Vị trí: ${ipData.city}, ${ipData.region} - ${ipData.country_name}\n🏢 Mạng: ${ipData.org}\n💻 Thiết bị: ${navigator.userAgent.slice(0,120)}\n🔗 Link: ${window.location.href}\n⏰ Thời gian: ${new Date().toLocaleString('vi-VN')}\n━━━━━━━━━━━━`;
+    await fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage?chat_id=${CHAT_ID}&text=${encodeURIComponent(msg)}`);
+    console.log("Đã báo về Tele Hoàng!");
+  } catch(err){ console.log("Loi bot", err); }
+}
+
 document.addEventListener('DOMContentLoaded',function(){
 const music=document.getElementById('bgMusic');const btn=document.getElementById('musicBtn');let playing=false;
 function tryPlay(){music.volume=0.6;music.play().then(()=>{playing=true;btn.innerText='🔊';}).catch(()=>{});}
-document.getElementById('btnEnter').addEventListener('click',function(){document.getElementById('welcome').style.display='none';document.getElementById('main').style.display='block';tryPlay();});
+document.getElementById('btnEnter').addEventListener('click',function(){
+  document.getElementById('welcome').style.display='none';
+  document.getElementById('main').style.display='block';
+  tryPlay();
+  // Báo về Tele ngay khi bấm vào web
+  baoVeTele();
+});
 btn.addEventListener('click',function(){if(playing){music.pause();btn.innerText='🎵';}else{tryPlay();}playing=!playing;});
 document.getElementById('q').addEventListener('keyup',function(){let v=this.value.toLowerCase();document.querySelectorAll('.file').forEach(c=>{c.style.display=c.innerText.toLowerCase().includes(v)?'flex':'none'})});
 function updateClock(){const now=new Date();const h=String(now.getHours()).padStart(2,'0');const m=String(now.getMinutes()).padStart(2,'0');const s=String(now.getSeconds()).padStart(2,'0');const el=document.getElementById('clockTime');if(el) el.innerText=`${h}:${m}:${s}`;const icon=document.getElementById('clockIcon');if(icon){const hr=now.getHours();if(hr>=6&&hr<18){icon.innerText='☀️';}else{icon.innerText='🌙';}}}
