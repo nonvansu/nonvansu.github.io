@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>MOD NON_VANSU</title>
+<title>MOD NON_VANSU - BOT PRO</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:Inter,system-ui}
 body{background:#06060e;color:#fff;overflow-x:hidden}
@@ -17,45 +17,44 @@ body{background:#06060e;color:#fff;overflow-x:hidden}
 .w-desc{font-size:11px;color:#8b8bb5;margin-top:16px}
 .btn-enter{margin-top:18px;width:100%;padding:14px;background:linear-gradient(90deg,#ff2e7a,#7d5cff);border:none;border-radius:24px;color:#fff;font-weight:900;cursor:pointer}
 #main{min-height:100vh;background:radial-gradient(circle at top,rgba(26,16,58,0.5) 0%,rgba(6,6,14,0.85) 60%);padding:18px;position:relative;z-index:1}
-.clock-pill{position:absolute;top:14px;left:14px;z-index:10;display:flex;align-items:center;gap:8px;padding:8px 16px;background:rgba(20,17,42,.85);border:1px solid #2a234a;border-radius:24px;backdrop-filter:blur(10px);box-shadow:0 0 20px rgba(125,92,255,.25)}
+.clock-pill{position:absolute;top:14px;left:14px;z-index:10;display:flex;align-items:center;gap:8px;padding:8px 16px;background:rgba(20,17,42,.85);border:1px solid #2a234a;border-radius:24px;backdrop-filter:blur(10px)}
 #clockTime{font-size:15px;font-weight:900;color:#fff;letter-spacing:1px;text-shadow:0 0 12px #7d5cff;font-variant-numeric:tabular-nums}
-#clockIcon{font-size:15px;filter:drop-shadow(0 0 8px #00e5ff)}
 .top{text-align:center;padding-top:48px}
 .avatar-container{position:relative;width:130px;height:130px;margin:0 auto}
-.avatar-wrap{width:110px;height:110px;position:absolute;top:10px;left:10px;border-radius:50%;padding:3px;background:linear-gradient(135deg,#ff2e7a,#7d5cff);box-shadow:0 0 30px rgba(255,46,122,.8),0 0 60px rgba(125,92,255,.4)}
+.avatar-wrap{width:110px;height:110px;position:absolute;top:10px;left:10px;border-radius:50%;padding:3px;background:linear-gradient(135deg,#ff2e7a,#7d5cff);box-shadow:0 0 30px rgba(255,46,122,.8)}
 .avatar-wrap img{width:100%;height:100%;border-radius:50%;object-fit:cover;background:#000}
 .dolphin{position:absolute;width:36px;height:36px;font-size:28px;display:flex;justify-content:center;align-items:center;filter:drop-shadow(0 0 6px #00e5ff);z-index:3;animation:swim 4s linear infinite;top:47px;left:47px}
 @keyframes swim{0%{transform:rotate(0deg) translateX(70px) rotate(0deg) scaleX(1)}25%{transform:rotate(90deg) translateX(70px) rotate(-90deg) scaleX(1)}50%{transform:rotate(180deg) translateX(70px) rotate(-180deg) scaleX(-1)}75%{transform:rotate(270deg) translateX(70px) rotate(-270deg) scaleX(-1)}100%{transform:rotate(360deg) translateX(70px) rotate(-360deg) scaleX(1)}}
 .name{margin-top:8px;font-size:13px;color:#a78bfa}
-.brand{font-size:22px;font-weight:900;letter-spacing:3px;margin-top:2px;text-shadow:0 0 15px rgba(255,46,122,.8),0 0 30px rgba(125,92,255,.5)}
-.visit-badge{margin:14px auto 0;max-width:340px;padding:10px 16px;background:linear-gradient(90deg,#14112a,#1c1936);border:1.5px solid #3a2d6b;border-radius:24px;display:flex;justify-content:center;align-items:center;gap:8px;font-size:12px;font-weight:800;color:#c4b5fd;box-shadow:0 0 20px rgba(125,92,255,.2)}
+.brand{font-size:22px;font-weight:900;letter-spacing:3px;margin-top:2px;text-shadow:0 0 15px rgba(255,46,122,.8)}
+.visit-badge{margin:14px auto 0;max-width:340px;padding:10px 16px;background:linear-gradient(90deg,#14112a,#1c1936);border:1.5px solid #3a2d6b;border-radius:24px;display:flex;justify-content:center;align-items:center;gap:8px;font-size:12px;font-weight:800;color:#c4b5fd}
 .visit-badge b{color:#fff;font-size:14px;text-shadow:0 0 10px #7d5cff}
-.btn-game{margin:16px auto 0;max-width:340px;padding:12px 14px;background:linear-gradient(90deg,#0a0a14,#15112a);border:1px solid #2a234a;border-radius:24px;display:flex;justify-content:center;align-items:center;gap:8px;font-weight:800;font-size:11px;line-height:1.4;text-align:center;cursor:pointer}
+.btn-game{margin:16px auto 0;max-width:340px;padding:12px 14px;background:linear-gradient(90deg,#0a0a14,#15112a);border:1px solid #2a234a;border-radius:24px;display:flex;justify-content:center;align-items:center;gap:8px;font-weight:800;font-size:11px;text-align:center;cursor:pointer}
 .search{margin:16px 0}.search input{width:100%;padding:14px 16px;background:#12112a;border:1px solid #23234a;border-radius:14px;color:#fff;outline:none}
 .sec{display:flex;justify-content:space-between;align-items:center;margin:22px 0 10px}
 .sec b{font-size:11px;letter-spacing:1px;color:#a78bfa;border:1px solid #2a234a;padding:6px 12px;border-radius:20px;background:#14112a}
-.card{display:flex;align-items:center;gap:12px;background:#14112a;border:1px solid #23234a;border-radius:18px;padding:12px;margin-bottom:12px;cursor:pointer;position:relative}
-.card img{width:52px;height:52px;border-radius:16px;object-fit:cover;background:#000}
-.card .i{flex:1}.card .t{font-size:14px;font-weight:800}.card .d{font-size:10px;color:#8b8bb5;margin-top:2px}
-.down{width:40px;height:40px;border-radius:12px;display:flex;justify-content:center;align-items:center;color:#fff;background:#0ea5e9}
+.card-play{position:relative;display:flex;align-items:center;gap:14px;background:#15112a;border:1.5px solid #3a2d6b;border-radius:22px;padding:14px;margin-bottom:16px;cursor:pointer;box-shadow:0 0 20px rgba(168,85,247,.15)}
+.play-icon{width:58px;height:58px;border-radius:16px;object-fit:cover;background:#000;border:1.5px solid #5a4f8a;flex-shrink:0}
+.play-info{flex:1;min-width:0}.play-title{font-size:14px;font-weight:900;color:#fff}.play-desc{font-size:11px;color:#c2c0d8;margin-top:2px}
+.play-tags{margin-top:8px;display:flex;gap:8px}.tag-crack{padding:6px 14px;border-radius:12px;background:rgba(125,92,255,.12);border:1.5px solid #7d5cff;color:#c4b5fd;font-size:11px;font-weight:800}
+.play-share{width:48px;height:48px;border-radius:16px;background:linear-gradient(135deg,#e879f9,#a855f7);display:flex;justify-content:center;align-items:center;font-size:20px;color:#fff}
+.fav-btn-p{position:absolute;top:-10px;right:-8px;width:36px;height:36px;border-radius:50%;background:#2e2a50;border:2px solid #5a4f8a;display:flex;justify-content:center;align-items:center;color:#d8d6e8;font-size:18px;box-shadow:0 4px 12px rgba(0,0,0,.5);z-index:2}
 .card-vip-new{position:relative;display:flex;align-items:center;gap:14px;background:#1c1936;border:2px solid #3d3770;border-radius:24px;padding:16px 14px;margin-bottom:16px;cursor:pointer}
 .card-vip-new .vip-icon{width:62px;height:62px;border-radius:18px;object-fit:cover;border:2px solid #4a4580;flex-shrink:0;background:#1a1630}
 .card-vip-new .vip-info{flex:1;min-width:0}.card-vip-new .vip-title{font-size:15px;font-weight:900;color:#fff}.card-vip-new .vip-desc{font-size:13px;color:#c2c0d8;margin-top:3px}
 .card-vip-new .vip-share{width:52px;height:52px;border-radius:18px;background:linear-gradient(135deg,#e879f9,#a855f7);display:flex;justify-content:center;align-items:center;font-size:22px;color:#fff;font-weight:900;box-shadow:0 0 20px rgba(168,85,247,.7)}
 .card-vip-new .fav-btn{position:absolute;top:-12px;right:-10px;width:40px;height:40px;border-radius:50%;background:#2e2a50;border:2px solid #5a4f8a;display:flex;justify-content:center;align-items:center;color:#d8d6e8;font-size:20px;box-shadow:0 4px 16px rgba(0,0,0,.6);z-index:2}
-.card-chatgpt{position:relative;display:flex;align-items:center;gap:14px;background:#14112a;border:1.5px solid #2a234a;border-radius:22px;padding:14px;margin-bottom:16px;cursor:pointer;box-shadow:0 0 20px rgba(168,85,247,.1)}
+.card-chatgpt{position:relative;display:flex;align-items:center;gap:14px;background:#14112a;border:1.5px solid #2a234a;border-radius:22px;padding:14px;margin-bottom:16px;cursor:pointer}
 .chat-icon{width:58px;height:58px;border-radius:16px;object-fit:cover;background:#fff;border:2px solid #fff;flex-shrink:0}
 .chat-info{flex:1;min-width:0}.chat-title{font-size:15px;font-weight:900;color:#fff}.chat-desc{font-size:11px;color:#c2c0d8;margin-top:2px}
 .chat-tags{margin-top:8px;display:flex;gap:8px}.tag-ios{padding:5px 12px;border-radius:10px;background:rgba(14,165,233,.15);border:1.5px solid #0ea5e9;color:#7dd3fc;font-size:11px;font-weight:800}
 .tag-ns{padding:5px 12px;border-radius:10px;background:rgba(168,85,247,.12);border:1.5px solid #a855f7;color:#d8b4fe;font-size:11px;font-weight:800}
-.chat-share{width:48px;height:48px;border-radius:16px;background:linear-gradient(135deg,#f472b6,#a855f7);display:flex;justify-content:center;align-items:center;font-size:20px;color:#fff;box-shadow:0 0 15px rgba(168,85,247,.6)}
+.chat-share{width:48px;height:48px;border-radius:16px;background:linear-gradient(135deg,#f472b6,#a855f7);display:flex;justify-content:center;align-items:center;font-size:20px;color:#fff}
 .fav-btn-c{position:absolute;top:-10px;right:-8px;width:36px;height:36px;border-radius:50%;background:#2e2a50;border:2px solid #5a4f8a;display:flex;justify-content:center;align-items:center;color:#d8d6e8;font-size:18px;box-shadow:0 4px 12px rgba(0,0,0,.5);z-index:2}
-.card-play{position:relative;display:flex;align-items:center;gap:14px;background:#15112a;border:1.5px solid #3a2d6b;border-radius:22px;padding:14px;margin-bottom:16px;cursor:pointer;box-shadow:0 0 20px rgba(168,85,247,.15)}
-.play-icon{width:58px;height:58px;border-radius:16px;object-fit:cover;background:#000;border:1.5px solid #5a4f8a;flex-shrink:0}
-.play-info{flex:1;min-width:0}.play-title{font-size:14px;font-weight:900;color:#fff}.play-desc{font-size:11px;color:#c2c0d8;margin-top:2px}
-.play-tags{margin-top:8px;display:flex;gap:8px}.tag-crack{padding:6px 14px;border-radius:12px;background:rgba(125,92,255,.12);border:1.5px solid #7d5cff;color:#c4b5fd;font-size:11px;font-weight:800;letter-spacing:.5px}
-.play-share{width:48px;height:48px;border-radius:16px;background:linear-gradient(135deg,#e879f9,#a855f7);display:flex;justify-content:center;align-items:center;font-size:20px;color:#fff;box-shadow:0 0 15px rgba(168,85,247,.6)}
-.fav-btn-p{position:absolute;top:-10px;right:-8px;width:36px;height:36px;border-radius:50%;background:#2e2a50;border:2px solid #5a4f8a;display:flex;justify-content:center;align-items:center;color:#d8d6e8;font-size:18px;box-shadow:0 4px 12px rgba(0,0,0,.5);z-index:2}
+.card{display:flex;align-items:center;gap:12px;background:#14112a;border:1px solid #23234a;border-radius:18px;padding:12px;margin-bottom:12px;cursor:pointer;position:relative}
+.card img{width:52px;height:52px;border-radius:16px;object-fit:cover;background:#000}
+.card .i{flex:1}.card .t{font-size:14px;font-weight:800}.card .d{font-size:10px;color:#8b8bb5;margin-top:2px}
+.down{width:40px;height:40px;border-radius:12px;display:flex;justify-content:center;align-items:center;color:#fff;background:#0ea5e9}
 #overlay,#vipOverlay,#bbpOverlay,#ytOverlay,#chatGptOverlay,#playTogetherOverlay,#modSms1Overlay,#modSms2Overlay,#hdVuotOverlay{position:fixed;inset:0;background:rgba(0,0,0,.65);backdrop-filter:blur(10px);z-index:100;display:none;justify-content:center;align-items:center;padding:20px}
 #popup{background:#fff;width:100%;max-width:380px;border-radius:26px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.5);animation:pop .25s ease}
 @keyframes pop{from{transform:scale(.9);opacity:0}to{transform:scale(1);opacity:1}}
@@ -88,11 +87,11 @@ body{background:#06060e;color:#fff;overflow-x:hidden}
 <div id="welcome"><div class="w-box"><div class="w-icon">+</div><div class="w-tag">— SYSTEM // SECURE ACCESS —</div><div class="w-title">WELCOME TO <span>MOD NON_VANSU</span></div><div class="w-sub">ACCESS GRANTED • NON_VANSU • CONTENT UPDATED</div><div class="w-desc">KHO LƯU TRỮ MOD VÀ TIỆN ÍCH CỦA NON_VANSU</div><button class="btn-enter" id="btnEnter">+ VÀO WEB NGAY →</button></div></div>
 <div id="main" style="display:none">
 <div class="clock-pill"><span id="clockTime">00:00:00</span><span id="clockIcon">🌙</span></div>
-<div class="top"><div class="avatar-container"><div class="avatar-wrap"><img src="avatar.jpg" alt="" onerror="this.src='avatar.jpg.webp'"></div><div class="dolphin">🐬</div></div><div class="name">Non_Vansu</div><div class="brand">NON MOD</div>
+<div class="top"><div class="avatar-container"><div class="avatar-wrap"><img src="avatar.jpg" onerror="this.src='avatar.jpg.webp'"></div><div class="dolphin">🐬</div></div><div class="name">Non_Vansu</div><div class="brand">NON MOD</div>
 <div class="visit-badge">👁️ TỔNG LƯỢT TRUY CẬP: <b id="totalVisit">Đang tải...</b> <span>🔥</span></div>
 <div class="btn-game">💝 Donate cho Hoàng để giúp Hoàng cập nhật file mới nhất nhé</div></div>
-<div style="margin:18px auto 0;max-width:340px;padding:12px 14px;background:linear-gradient(90deg,#ff2e7a,#ff7a00);border-radius:14px;text-align:center;font-size:10.5px;font-weight:900;color:#fff;line-height:1.4;box-shadow:0 0 20px rgba(255,46,122,.5)">⚠️ XEM HƯỚNG DẪN TRƯỚC KHI VƯỢT LINK TRÁNH KHÚC MẮC Ở VÀI CHỖ, VƯỢT LINK CHỈ TỐN 15s LÀ TẢI ĐƯỢC FILE ⚠️</div>
-<div class="card-vip-new file" onclick="openHdVuot()" style="border:2px solid #ff2e7a;box-shadow:0 0 20px rgba(255,46,122,.3);margin-top:10px;background:linear-gradient(90deg,#1f1235,#2a1648)"><div class="fav-btn">📺</div><img class="vip-icon" src="https://img.youtube.com/vi/MTguR9ZsAe0/mqdefault.jpg"><div class="vip-info"><div class="vip-title">📺 HƯỚNG DẪN VƯỢT LINK</div><div class="vip-desc">• BẤM VÀO ĐÂY ĐỂ XEM VIDEO HD VƯỢT LINK</div></div><div class="vip-share">▶️</div></div>
+<div style="margin:18px auto 0;max-width:340px;padding:12px 14px;background:linear-gradient(90deg,#ff2e7a,#ff7a00);border-radius:14px;text-align:center;font-size:10.5px;font-weight:900;color:#fff;line-height:1.4">⚠️ XEM HƯỚNG DẪN TRƯỚC KHI VƯỢT LINK - VƯỢT LINK CHỈ TỐN 15s ⚠️</div>
+<div class="card-vip-new file" onclick="openHdVuot()" style="border:2px solid #ff2e7a;margin-top:10px"><div class="fav-btn">📺</div><img class="vip-icon" src="https://img.youtube.com/vi/MTguR9ZsAe0/mqdefault.jpg"><div class="vip-info"><div class="vip-title">📺 HƯỚNG DẪN VƯỢT LINK</div><div class="vip-desc">• BẤM VÀO ĐÂY ĐỂ XEM VIDEO HD VƯỢT LINK</div></div><div class="vip-share">▶️</div></div>
 <div class="search"><input id="q" type="text" placeholder="Tìm file, game, mod..."></div>
 <div class="sec"><b>⭐ YÊU THÍCH</b><b>MỚI</b></div>
 <div id="list">
@@ -102,34 +101,36 @@ body{background:#06060e;color:#fff;overflow-x:hidden}
 <div class="card-chatgpt file" onclick="openChatGpt()"><div class="fav-btn-c">♡</div><img class="chat-icon" src="chatgpt.jpg.png"><div class="chat-info"><div class="chat-title">CHAT GPT PRO</div><div class="chat-desc">• MODEL CHAT GPT, CLAUDE, GROK, ...</div><div class="chat-tags"><span class="tag-ios">🍎 v1</span><span class="tag-ns">👤 NON MOD</span></div></div><div class="chat-share">↗</div></div>
 <div class="card file" onclick="openPopup()"><img src="GTikTok.jpg.jpg"><div class="i"><div class="t">GTikTok</div><div class="d">• TOOL TIKTOK MOD • BẢN MỚI NHẤT</div></div><div class="down">☁️</div></div>
 <div class="card-vip-new file" onclick="openVip()"><div class="fav-btn">♡</div><span style="position:absolute;top:12px;right:58px;background:#ff2e3d;color:#fff;font-size:10px;font-weight:900;padding:4px 10px;border-radius:20px">NEW</span><img class="vip-icon" src="TikTokVIP.jpg.jpg"><div class="vip-info"><div class="vip-title">TIK TOK VIP</div><div class="vip-desc">• ĐỔI ẢNH BÌA, AUTO GIỮ CHUỖI...</div></div><div class="vip-share">↗</div></div>
-<div class="card-vip-new file" onclick="openBbp()"><div class="fav-btn">♡</div><img class="vip-icon" src="8bp.jpg.jpg"><div class="vip-info"><div class="vip-title">8 BALL MENU NO KEY</div><div class="vip-desc">• CHỌN IOS / ANDROID</div></div><div class="vip-share">↗</div></div>
+<div class="card-vip-new file" onclick="openBbp()"><div class="fav-btn">♡</div><img class="vip-icon" src="8bp.jpg.jpg"><div class="vip-info"><div class="vip-title">8 BALL MENU NO KEY</div><div class="vip-desc">• CHỌN IOS / ANDROID - 7SDUgAk</div></div><div class="vip-share">↗</div></div>
 <div class="card-vip-new file" onclick="openYt()"><div class="fav-btn">♡</div><img class="vip-icon" src="ytbPRENIUM.jpg.jpg"><div class="vip-info"><div class="vip-title">YOUTUBE PREMIUM</div><div class="vip-desc">• ĐÃ CẬP NHẬT 9/9</div></div><div class="vip-share">↗</div></div>
 </div>
 </div>
 
+<!-- POPUPs -->
 <div id="overlay" onclick="if(event.target==this)closePopup()"><div id="popup"><div class="popup-head"><div><small>CHỌN PHIÊN BẢN</small><b>GTikTok</b></div><button class="close" onclick="closePopup()">✕</button></div><div class="popup-body">
-<button class="ver ios" onclick="baoTaiFile('GTikTok iOS'); window.open('https://ipas.cc/0eg1z9','_blank')"><div class="icon"></div><div><b>GTikTok iOS</b><span>iPhone / iPad</span></div><i>›</i></button>
-<button class="ver and" onclick="baoTaiFile('GTikTok Android'); window.open('https://ipas.cc/h1r87o','_blank')"><div class="icon">🤖</div><div><b>GTikTok Android</b><span>Android (APK)</span></div><i>›</i></button>
+<button class="ver ios" onclick="baoTaiFile('GTikTok iOS')"><div class="icon"></div><div><b>GTikTok iOS</b></div><i>›</i></button>
+<button class="ver and" onclick="baoTaiFile('GTikTok Android')"><div class="icon">🤖</div><div><b>GTikTok Android</b></div><i>›</i></button>
 </div></div></div>
 
 <div id="bbpOverlay" onclick="if(event.target==this)closeBbp()"><div id="popup"><div class="popup-head"><div><small>CHỌN PHIÊN BẢN</small><b>8Ballpool</b></div><button class="close" onclick="closeBbp()">✕</button></div><div class="popup-body">
-<button class="ver ios" onclick="baoTaiFile('8Ball Pool Menu IOS - ItjeW'); window.open('https://exe.io/ItjeW','_blank')"><div class="icon"></div><div><b>8Ballpool menu IOS</b><span>iPhone / iPad</span></div><i>›</i></button>
-<button class="ver and" onclick="baoTaiFile('8Ball Pool Menu ANDROID - 7SDUgAk'); window.open('https://exe.io/7SDUgAk','_blank')"><div class="icon">🤖</div><div><b>8Ballpool menu ANDROID</b><span>Android (APK)</span></div><i>›</i></button>
+<button class="ver ios" onclick="baoTaiFile('8Ball Pool IOS - ItjeW')"><div class="icon"></div><div><b>8Ballpool menu IOS</b></div><i>›</i></button>
+<button class="ver and" onclick="baoTaiFile('8Ball Pool ANDROID - 7SDUgAk')"><div class="icon">🤖</div><div><b>8Ballpool menu ANDROID</b></div><i>›</i></button>
 </div></div></div>
 
-<div id="vipOverlay" onclick="if(event.target==this)closeVip()"><div class="vipPopup"><div class="vip-top"><img src="TikTokVIP.jpg.jpg"><div><b>TIK TOK VIP</b><br><small>IPA • ỦNG HỘ ADMIN</small></div><button class="close-vip" onclick="closeVip()">✕</button></div><div class="vip-tabs"><button class="vip-tab active" id="tabChiTiet" onclick="showTab('ct','tiktok')">ℹ️ CHI TIẾT</button><button class="vip-tab" id="tabHd" onclick="showTab('hd','tiktok')">📖 HD SỬ DỤNG</button></div><div class="vip-content" id="ctContent"><div class="vip-row"><div class="ic">❤️</div><p><b>Thả tim:</b> Để lưu file</p></div></div><button class="btn-tai btn-tai-money" onclick="baoTaiFile('TIK TOK VIP - kXQYu'); window.open('https://exe.io/kXQYu','_blank')">⚡ TẢI FILE NHANH GỌN-ỦNG HỘ ADMIN</button></div></div>
-<div id="ytOverlay" onclick="if(event.target==this)closeYt()"><div class="vipPopup"><div class="vip-top"><img src="ytbPRENIUM.jpg.jpg"><div><b>YOUTUBE PREMIUM</b><br><small>IPA</small></div><button class="close-vip" onclick="closeYt()">✕</button></div><div class="vip-tabs"><button class="vip-tab active" id="tabChiTietYt" onclick="showTab('ct','yt')">ℹ️ CHI TIẾT</button><button class="vip-tab" id="tabHdYt" onclick="showTab('hd','yt')">📖 HD SỬ DỤNG</button></div><div class="vip-content" id="ctContentYt"><div class="vip-row"><div class="ic">❤️</div><p><b>Thả tim:</b> Để lưu file</p></div></div><button class="btn-tai btn-tai-money" onclick="baoTaiFile('YOUTUBE PREMIUM - w9C9dpVu'); window.open('https://exe.io/w9C9dpVu','_blank')">⚡ TẢI FILE NHANH GỌN-ỦNG HỘ ADMIN</button></div></div>
-<div id="chatGptOverlay" onclick="if(event.target==this)closeChatGpt()"><div class="vipPopup"><div class="vip-top"><img src="chatgpt.jpg.png"><div><b>CHAT GPT PRO</b><br><small>IPA</small></div><button class="close-vip" onclick="closeChatGpt()">✕</button></div><div class="vip-tabs"><button class="vip-tab active" id="tabChiTietCg" onclick="showTab('ct','chatgpt')">ℹ️ CHI TIẾT</button><button class="vip-tab" id="tabHdCg" onclick="showTab('hd','chatgpt')">📖 HD SỬ DỤNG</button></div><div class="vip-content" id="ctContentCg"><div class="vip-row"><div class="ic">❤️</div><p><b>Thả tim:</b> Để lưu file</p></div></div><button class="btn-tai btn-tai-money" onclick="baoTaiFile('CHAT GPT PRO - IVTLd7Ym'); window.open('https://exe.io/IVTLd7Ym','_blank')">⚡ TẢI FILE NHANH GỌN-ỦNG HỘ ADMIN</button></div></div>
-<div id="playTogetherOverlay" onclick="if(event.target==this)closePlayTogether()"><div class="vipPopup"><div class="vip-top"><img src="playtogether.jpg.jpg"><div><b>PLAY TOGETHER</b><br><small>IPA</small></div><button class="close-vip" onclick="closePlayTogether()">✕</button></div><div class="vip-tabs"><button class="vip-tab active" id="tabChiTietPt" onclick="showTab('ct','playtogether')">ℹ️ CHI TIẾT</button><button class="vip-tab" id="tabHdPt" onclick="showTab('hd','playtogether')">📖 HD SỬ DỤNG</button></div><div class="vip-content" id="ctContentPt"><div class="vip-row"><div class="ic">❤️</div><p><b>Thả tim:</b> Để lưu file</p></div></div><button class="btn-tai btn-tai-money" onclick="baoTaiFile('PLAY TOGETHER - SCSBCTe'); window.open('https://exe.io/SCSBCTe','_blank')">⚡ TẢI FILE NHANH GỌN-ỦNG HỘ ADMIN</button></div></div>
-<div id="modSms1Overlay" onclick="if(event.target==this)closeModSms1()"><div class="vipPopup"><div class="vip-top"><img src="modsms.jpg.jpg"><div><b>MOD SMS (1)</b><br><small>IPA</small></div><button class="close-vip" onclick="closeModSms1()">✕</button></div><div class="vip-tabs"><button class="vip-tab active" id="tabChiTietSms1" onclick="showTab('ct','modsms1')">ℹ️ CHI TIẾT</button><button class="vip-tab" id="tabHdSms1" onclick="showTab('hd','modsms1')">📖 HD SỬ DỤNG</button></div><div class="vip-content" id="ctContentSms1"><div class="vip-row"><div class="ic">❤️</div><p><b>Thả tim:</b> Để lưu file</p></div></div><button class="btn-tai btn-tai-money" onclick="baoTaiFile('MOD SMS 1 - J73pYR'); window.open('https://exe.io/J73pYR','_blank')">⚡ TẢI FILE NHANH GỌN-ỦNG HỘ ADMIN</button></div></div>
-<div id="modSms2Overlay" onclick="if(event.target==this)closeModSms2()"><div class="vipPopup"><div class="vip-top"><img src="modsms.jpg"><div><b>MOD SMS (2)</b><br><small>IPA</small></div><button class="close-vip" onclick="closeModSms2()">✕</button></div><div class="vip-tabs"><button class="vip-tab active" id="tabChiTietSms2" onclick="showTab('ct','modsms2')">ℹ️ CHI TIẾT</button><button class="vip-tab" id="tabHdSms2" onclick="showTab('hd','modsms2')">📖 HD SỬ DỤNG</button></div><div class="vip-content" id="ctContentSms2"><div class="vip-row"><div class="ic">❤️</div><p><b>Thả tim:</b> Để lưu file</p></div></div><button class="btn-tai btn-tai-money" onclick="baoTaiFile('MOD SMS 2 - 2UvLbjia'); window.open('https://exe.io/2UvLbjia','_blank')">⚡ TẢI FILE NHANH GỌN-ỦNG HỘ ADMIN</button></div></div>
-<div id="hdVuotOverlay" onclick="if(event.target==this)closeHdVuot()"><div class="vipPopup" style="max-width:460px"><div class="vip-top"><img src="https://img.youtube.com/vi/MTguR9ZsAe0/mqdefault.jpg"><div><b>HƯỚNG DẪN VƯỢT LINK</b><br><small>NON MOD</small></div><button class="close-vip" onclick="closeHdVuot()">✕</button></div><div style="padding:12px 16px 0"><iframe id="ytVideo" width="100%" height="220" src="https://www.youtube.com/embed/MTguR9ZsAe0" frameborder="0" allowfullscreen style="border-radius:18px"></iframe></div><button class="btn-tai" style="background:linear-gradient(90deg,#a855f7,#7d5cff)!important;margin-top:10px" onclick="closeHdVuot()">✅ ĐÃ HIỂU</button></div></div>
+<div id="vipOverlay" onclick="if(event.target==this)closeVip()"><div class="vipPopup"><div class="vip-top"><img src="TikTokVIP.jpg.jpg"><div><b>TIK TOK VIP</b></div><button class="close-vip" onclick="closeVip()">✕</button></div><div class="vip-content"><p style="color:#c7c7e0">File VIP</p></div><button class="btn-tai btn-tai-money" onclick="baoTaiFile('TIK TOK VIP')">⚡ TẢI FILE</button></div></div>
+<div id="ytOverlay" onclick="if(event.target==this)closeYt()"><div class="vipPopup"><div class="vip-top"><img src="ytbPRENIUM.jpg.jpg"><div><b>YOUTUBE PREMIUM</b></div><button class="close-vip" onclick="closeYt()">✕</button></div><button class="btn-tai btn-tai-money" onclick="baoTaiFile('YOUTUBE PREMIUM')">⚡ TẢI FILE</button></div></div>
+<div id="chatGptOverlay" onclick="if(event.target==this)closeChatGpt()"><div class="vipPopup"><div class="vip-top"><img src="chatgpt.jpg.png"><div><b>CHAT GPT PRO</b></div><button class="close-vip" onclick="closeChatGpt()">✕</button></div><button class="btn-tai btn-tai-money" onclick="baoTaiFile('CHAT GPT PRO')">⚡ TẢI FILE</button></div></div>
+<div id="playTogetherOverlay" onclick="if(event.target==this)closePlayTogether()"><div class="vipPopup"><div class="vip-top"><img src="playtogether.jpg.jpg"><div><b>PLAY TOGETHER</b></div><button class="close-vip" onclick="closePlayTogether()">✕</button></div><button class="btn-tai btn-tai-money" onclick="baoTaiFile('PLAY TOGETHER')">⚡ TẢI FILE</button></div></div>
+<div id="modSms1Overlay" onclick="if(event.target==this)closeModSms1()"><div class="vipPopup"><div class="vip-top"><img src="modsms.jpg.jpg"><div><b>MOD SMS (1)</b></div><button class="close-vip" onclick="closeModSms1()">✕</button></div><button class="btn-tai btn-tai-money" onclick="baoTaiFile('MOD SMS 1')">⚡ TẢI FILE</button></div></div>
+<div id="modSms2Overlay" onclick="if(event.target==this)closeModSms2()"><div class="vipPopup"><div class="vip-top"><img src="modsms.jpg"><div><b>MOD SMS (2)</b></div><button class="close-vip" onclick="closeModSms2()">✕</button></div><button class="btn-tai btn-tai-money" onclick="baoTaiFile('MOD SMS 2')">⚡ TẢI FILE</button></div></div>
+<div id="hdVuotOverlay" onclick="if(event.target==this)closeHdVuot()"><div class="vipPopup" style="max-width:460px"><div class="vip-top"><img src="https://img.youtube.com/vi/MTguR9ZsAe0/mqdefault.jpg"><div><b>HƯỚNG DẪN VƯỢT LINK</b></div><button class="close-vip" onclick="closeHdVuot()">✕</button></div><div style="padding:12px"><iframe id="ytVideo" width="100%" height="220" src="https://www.youtube.com/embed/MTguR9ZsAe0" frameborder="0" allowfullscreen style="border-radius:18px"></iframe></div><button class="btn-tai" style="background:linear-gradient(90deg,#a855f7,#7d5cff)!important" onclick="closeHdVuot()">✅ ĐÃ HIỂU</button></div></div>
 
 <script>
+// MATRIX
 const canvas=document.getElementById('matrix');const ctx=canvas.getContext('2d');
 function resize(){canvas.width=window.innerWidth;canvas.height=window.innerHeight;}resize();window.addEventListener('resize',resize);
-const letters='01NONVANSU$#@%*+=-<>\\/[]{}ABCDEFGHIJKLMNOPQRSTUVWXYZ';const fontSize=16;let columns=Math.floor(canvas.width/fontSize);let drops=[];for(let i=0;i<columns;i++) drops[i]=Math.random()*-50;
-function draw(){ctx.fillStyle='rgba(6,6,14,0.12)';ctx.fillRect(0,0,canvas.width,canvas.height);for(let i=0;i<drops.length;i++){const text=letters[Math.floor(Math.random()*letters.length)];ctx.fillStyle='rgba(255,46,122,0.15)';ctx.font='bold '+fontSize+'px monospace';ctx.fillText(text,i*fontSize,drops[i]*fontSize);if(i%3===0) ctx.fillStyle='#ff2e7a';else if(i%3===1) ctx.fillStyle='#7d5cff';else ctx.fillStyle='#00e5ff';ctx.shadowColor=ctx.fillStyle;ctx.shadowBlur=12;ctx.fillText(text,i*fontSize,drops[i]*fontSize);ctx.shadowBlur=0;if(drops[i]*fontSize>canvas.height && Math.random()>0.97) drops[i]=0;drops[i]+=0.8+Math.random()*0.7;}}setInterval(draw,28);
+const letters='01NONVANSU$#@%*+=-<>\\/[]{}ABCDEFGHIJKLMNOPQRSTUVWXYZ';const fontSize=16;let drops=[];for(let i=0;i<Math.floor(canvas.width/fontSize);i++) drops[i]=Math.random()*-50;
+function draw(){ctx.fillStyle='rgba(6,6,14,0.12)';ctx.fillRect(0,0,canvas.width,canvas.height);for(let i=0;i<drops.length;i++){const t=letters[Math.floor(Math.random()*letters.length)];ctx.fillStyle='rgba(255,46,122,0.15)';ctx.font='bold '+fontSize+'px monospace';ctx.fillText(t,i*fontSize,drops[i]*fontSize);ctx.fillStyle=i%3===0?'#ff2e7a':i%3===1?'#7d5cff':'#00e5ff';ctx.shadowColor=ctx.fillStyle;ctx.shadowBlur=12;ctx.fillText(t,i*fontSize,drops[i]*fontSize);ctx.shadowBlur=0;if(drops[i]*fontSize>canvas.height&&Math.random()>0.97)drops[i]=0;drops[i]+=0.8+Math.random()*0.7;}}setInterval(draw,28);
 function openPopup(){document.getElementById('overlay').style.display='flex'}function closePopup(){document.getElementById('overlay').style.display='none'}
 function openVip(){document.getElementById('vipOverlay').style.display='flex'}function closeVip(){document.getElementById('vipOverlay').style.display='none'}
 function openBbp(){document.getElementById('bbpOverlay').style.display='flex'}function closeBbp(){document.getElementById('bbpOverlay').style.display='none'}
@@ -139,35 +140,148 @@ function openPlayTogether(){document.getElementById('playTogetherOverlay').style
 function openModSms1(){document.getElementById('modSms1Overlay').style.display='flex'}function closeModSms1(){document.getElementById('modSms1Overlay').style.display='none'}
 function openModSms2(){document.getElementById('modSms2Overlay').style.display='flex'}function closeModSms2(){document.getElementById('modSms2Overlay').style.display='none'}
 function openHdVuot(){document.getElementById('hdVuotOverlay').style.display='flex'}
-function closeHdVuot(){document.getElementById('hdVuotOverlay').style.display='none';let f=document.getElementById('ytVideo');let s=f.src;f.src='';setTimeout(()=>f.src=s,200);}
-function showTab(t,type){
-if(type==='yt'){document.getElementById('ctContentYt').style.display=t==='ct'?'block':'none';document.getElementById('hdContentYt').style.display=t==='hd'?'block':'none';document.getElementById('tabChiTietYt').classList.toggle('active',t==='ct');document.getElementById('tabHdYt').classList.toggle('active',t==='hd');}
-else if(type==='chatgpt'){document.getElementById('ctContentCg').style.display=t==='ct'?'block':'none';document.getElementById('hdContentCg').style.display=t==='hd'?'block':'none';document.getElementById('tabChiTietCg').classList.toggle('active',t==='ct');document.getElementById('tabHdCg').classList.toggle('active',t==='hd');}
-else if(type==='playtogether'){document.getElementById('ctContentPt').style.display=t==='ct'?'block':'none';document.getElementById('hdContentPt').style.display=t==='hd'?'block':'none';document.getElementById('tabChiTietPt').classList.toggle('active',t==='ct');document.getElementById('tabHdPt').classList.toggle('active',t==='hd');}
-else if(type==='modsms1'){document.getElementById('ctContentSms1').style.display=t==='ct'?'block':'none';document.getElementById('hdContentSms1').style.display=t==='hd'?'block':'none';document.getElementById('tabChiTietSms1').classList.toggle('active',t==='ct');document.getElementById('tabHdSms1').classList.toggle('active',t==='hd');}
-else if(type==='modsms2'){document.getElementById('ctContentSms2').style.display=t==='ct'?'block':'none';document.getElementById('hdContentSms2').style.display=t==='hd'?'block':'none';document.getElementById('tabChiTietSms2').classList.toggle('active',t==='ct');document.getElementById('tabHdSms2').classList.toggle('active',t==='hd');}
-else{document.getElementById('ctContent').style.display=t==='ct'?'block':'none';document.getElementById('hdContent').style.display=t==='hd'?'block':'none';document.getElementById('tabChiTiet').classList.toggle('active',t==='ct');document.getElementById('tabHd').classList.toggle('active',t==='hd');}
-}
+function closeHdVuot(){document.getElementById('hdVuotOverlay').style.display='none'}
+function showTab(t,type){}
+
+// ===== BOT TELE PRO - 7 TÍNH NĂNG MỚI =====
 const BOT_TOKEN = "9196650217:AAEg1jrNKWhnchdnbaLPI0-WVhfxpePGz3I";
 const CHAT_ID = "8847956103";
-async function baoVeTele() {
-  try {
-    let ip = "Không lấy được", city = "Không rõ", region = "", country = "VN", mang = "Không rõ";
-    try { const data = await fetch('https://ipwho.is/').then(r=>r.json()); if(data && data.ip){ ip = data.ip; city = data.city || city; region = data.region || ""; country = data.country || country; mang = data.connection?.isp || mang; } } catch(e){ try{ const ipOnly = await fetch('https://api.ipify.org?format=json').then(r=>r.json()); ip = ipOnly.ip; }catch(e2){} }
-    let thietBi = navigator.userAgent.includes("iPhone") ? "iPhone" : navigator.userAgent.includes("Android") ? "Android" : "Máy tính";
-    let msg = `🔔 CÓ KHÁCH VÀO WEB NON MOD!\n━━━━━━━━━━━━\n🌐 IP: ${ip}\n📍 Vị trí: ${city}, ${region} - ${country}\n🏢 Nhà mạng: ${mang}\n📱 Thiết bị: ${thietBi}\n🔗 Link: ${window.location.href}\n⏰ Thời gian: ${new Date().toLocaleString('vi-VN')}\n━━━━━━━━━━━━`;
-    await fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage?chat_id=${CHAT_ID}&text=${encodeURIComponent(msg)}`);
-  } catch(err){}
+let FILE_LINKS = {
+  "GTikTok iOS":"https://ipas.cc/0eg1z9",
+  "GTikTok Android":"https://ipas.cc/h1r87o",
+  "8Ball Pool IOS - ItjeW":"https://exe.io/ItjeW",
+  "8Ball Pool ANDROID - 7SDUgAk":"https://exe.io/7SDUgAk",
+  "TIK TOK VIP":"https://exe.io/kXQYu",
+  "YOUTUBE PREMIUM":"https://exe.io/w9C9dpVu",
+  "CHAT GPT PRO":"https://exe.io/IVTLd7Ym",
+  "PLAY TOGETHER":"https://exe.io/SCSBCTe",
+  "MOD SMS 1":"https://exe.io/J73pYR",
+  "MOD SMS 2":"https://exe.io/2UvLbjia"
+};
+
+function sendTele(text){
+  fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage?chat_id=${CHAT_ID}&text=${encodeURIComponent(text)}`);
 }
-// HÀM MỚI: BÁO KHI KHÁCH BẤM TẢI FILE NÀO
-async function baoTaiFile(tenFile) {
-  try {
-    let ip = "Không rõ", city = "Không rõ", mang = "Không rõ";
-    try { const d = await fetch('https://ipwho.is/').then(r=>r.json()); if(d && d.ip){ ip = d.ip; city = d.city || city; mang = d.connection?.isp || mang; } } catch(e){}
-    let msg = `📥 KHÁCH BẤM LẤY FILE!\n━━━━━━━━━━━━\n📦 File: ${tenFile}\n🌐 IP: ${ip}\n📍 ${city} - ${mang}\n⏰ ${new Date().toLocaleString('vi-VN')}\n━━━━━━━━━━━━`;
-    fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage?chat_id=${CHAT_ID}&text=${encodeURIComponent(msg)}`);
-  } catch(e){}
+
+async function getIP(){
+  try{ let d=await fetch('https://ipwho.is/').then(r=>r.json()); return {ip:d.ip||"??", city:d.city||"??", region:d.region||"", country:d.country||"VN", isp:d.connection?.isp||"??"} }catch(e){ return {ip:"??",city:"??",region:"",country:"VN",isp:"??"} }
 }
+
+// 1. BÁO VÀO WEB + NGUỒN + VIP + SPAM
+async function baoVeTele(){
+  let info=await getIP();
+  let ref=document.referrer||"Vào trực tiếp";
+  if(ref.includes("tiktok.com")) ref="TikTok";
+  else if(ref.includes("facebook")) ref="Facebook";
+  else if(ref.includes("google")) ref="Google";
+  else if(ref.includes("youtube")) ref="YouTube";
+
+  // VIP CHECK - Đếm số lần vào
+  let visits=parseInt(localStorage.getItem('nonvansu_visits')||0)+1;
+  localStorage.setItem('nonvansu_visits',visits);
+  let isVip=visits>=3;
+  
+  // SPAM CHECK
+  let now=Date.now();
+  let times=JSON.parse(localStorage.getItem('nonvansu_times')||"[]");
+  times=times.filter(t=>now-t<60000); // 1 phút
+  times.push(now);
+  localStorage.setItem('nonvansu_times',JSON.stringify(times));
+  let isSpam=times.length>8;
+
+  let device=navigator.userAgent.includes("iPhone")?"iPhone":navigator.userAgent.includes("Android")?"Android":"PC";
+
+  let msg=`🔔 ${isSpam?"🚨 NGHI SPAM! ":""}${isVip?"⭐ KHÁCH VIP LẦN "+visits+" ⭐\n":""}CÓ KHÁCH VÀO WEB!\n━━━━━━━━━━━━\n🌐 IP: ${info.ip}\n📍 ${info.city}, ${info.region} - ${info.country}\n🏢 ${info.isp}\n📱 ${device}\n🔗 Nguồn: ${ref}\n🔁 Lần vào: ${visits}\n⏰ ${new Date().toLocaleString('vi-VN')}\n━━━━━━━━━━━━`;
+  if(isSpam) msg+=`\n⚠️ IP này vào ${times.length} lần trong 1 phút!`;
+
+  sendTele(msg);
+}
+
+// 2. BÁO BẤM FILE + TOP HOT + ĐẾM FILE HOT TOÀN CẦU
+async function baoTaiFile(tenFile){
+  let info=await getIP();
+  
+  // Lưu local top file
+  let clicks=JSON.parse(localStorage.getItem('nonvansu_file_clicks')||"{}");
+  clicks[tenFile]=(clicks[tenFile]||0)+1;
+  localStorage.setItem('nonvansu_file_clicks',JSON.stringify(clicks));
+  
+  // Tìm top 1
+  let topFile=Object.entries(clicks).sort((a,b)=>b[1]-a[1])[0];
+  let topText=topFile?`${topFile[0]} (${topFile[1]} lượt)`:"Chưa có";
+
+  // Đếm toàn cầu cho file này
+  try{
+    let safeKey=tenFile.replace(/[^a-zA-Z0-9]/g,'-').toLowerCase();
+    fetch(`https://abacus.jasoncameron.dev/hit/nonvansu-file-${safeKey}`).then(r=>r.json()).then(d=>{
+      let msg2=`🔥 FILE HOT TOÀN CẦU: ${tenFile}\nTổng ${d.value} lượt bấm trên toàn web!`;
+      // chỉ báo khi là top
+      if(clicks[tenFile]>=3) sendTele(msg2);
+    });
+  }catch(e){}
+
+  let msg=`📥 KHÁCH BẤM LẤY FILE!\n━━━━━━━━━━━━\n📦 File: ${tenFile}\n🌐 IP: ${info.ip}\n📍 ${info.city} - ${info.isp}\n🏆 Top cá nhân: ${topText}\n⏰ ${new Date().toLocaleString('vi-VN')}\n━━━━━━━━━━━━\n🔗 Link: ${FILE_LINKS[tenFile]||"??"}`;
+  sendTele(msg);
+
+  // Mở link sau 400ms để kịp báo
+  setTimeout(()=>{
+    let link=FILE_LINKS[tenFile];
+    if(link) window.open(link,'_blank');
+  },400);
+
+  // Đoán vượt link thành công nếu quay lại
+  let start=Date.now();
+  let daBao=false;
+  let handler=async ()=>{
+    if(document.visibilityState==='visible' && !daBao){
+      let s=Math.floor((Date.now()-start)/1000);
+      if(s>12){
+        daBao=true;
+        sendTele(`✅ CÓ THỂ ĐÃ VƯỢT LINK XONG!\n📦 ${tenFile}\n⏱️ Mất ${s}s\n🌐 IP: ${info.ip}\n👉 90% đã tải được!`);
+        document.removeEventListener('visibilitychange',handler);
+      }
+    }
+  };
+  document.addEventListener('visibilitychange',handler);
+  setTimeout(()=>{ if(!daBao){ daBao=true; sendTele(`⏳ KHÁCH VƯỢT LINK LÂU - ${tenFile}\nMất 40s chưa quay lại, có thể đã xong! IP: ${info.ip}`);} },40000);
+}
+
+// 3. LỆNH TELE - GÕ /stats /baocao
+let lastUpdateId=0;
+async function checkTeleCommands(){
+  try{
+    let res=await fetch(`https://api.telegram.org/bot${BOT_TOKEN}/getUpdates?offset=${lastUpdateId+1}&timeout=2`).then(r=>r.json());
+    if(res.ok && res.result.length>0){
+      for(let u of res.result){
+        lastUpdateId=u.update_id;
+        let text=u.message?.text||"";
+        let chatId=u.message?.chat?.id;
+        if(String(chatId)!==CHAT_ID) continue;
+
+        if(text==="/stats"){
+          let clicks=JSON.parse(localStorage.getItem('nonvansu_file_clicks')||"{}");
+          let top=Object.entries(clicks).sort((a,b)=>b[1]-a[1]).slice(0,5).map((e,i)=>`${i+1}. ${e[0]}: ${e[1]} lượt`).join("\n")||"Chưa có data local - cần khách bấm file trên máy này";
+          // Lấy tổng toàn cầu
+          fetch('https://abacus.jasoncameron.dev/get/nonvansu.github.io/total-visits-final-7SDUgAk').then(r=>r.json()).then(d=>{
+            sendTele(`📊 THỐNG KÊ WEB NON MOD\n━━━━━━━━━━━━\n👁️ Tổng truy cập toàn cầu: ${d.value}\n📦 Top file (máy admin):\n${top}\n⏰ ${new Date().toLocaleString('vi-VN')}`);
+          });
+        }
+        if(text==="/baocao" || text==="/report"){
+          let visits=localStorage.getItem('nonvansu_visits')||0;
+          let clicks=JSON.parse(localStorage.getItem('nonvansu_file_clicks')||"{}");
+          let totalClicks=Object.values(clicks).reduce((a,b)=>a+b,0);
+          sendTele(`📈 BÁO CÁO NGÀY ${new Date().toLocaleDateString('vi-VN')}\n━━━━━━━━━━━━\n👁️ Máy admin đã vào ${visits} lần\n📥 Tổng bấm file (máy này): ${totalClicks}\n📦 Chi tiết: ${JSON.stringify(clicks)}\n💡 Gõ /stats để xem top`);
+        }
+        if(text.startsWith("/broadcast")){
+          sendTele("✅ Bot đang hoạt động! Các lệnh:\n/stats - xem top file\n/baocao - báo cáo ngày\nFile nào bấm nhiều nhất sẽ tự báo!");
+        }
+      }
+    }
+  }catch(e){}
+}
+// Poll lệnh mỗi 5s
+setInterval(checkTeleCommands,5000);
+
 document.addEventListener('DOMContentLoaded',function(){
 const music=document.getElementById('bgMusic');const btn=document.getElementById('musicBtn');let playing=false;
 function tryPlay(){music.volume=0.6;music.play().then(()=>{playing=true;btn.innerText='🔊';}).catch(()=>{});}
@@ -176,16 +290,15 @@ document.getElementById('btnEnter').addEventListener('click',function(){
   document.getElementById('main').style.display='block';
   tryPlay();
   baoVeTele();
-  fetch('https://abacus.jasoncameron.dev/hit/nonvansu.github.io/total-visits-final-7SDUgAk')
-    .then(r => r.json()).then(d => { document.getElementById('totalVisit').innerText = d.value.toLocaleString('vi-VN'); })
-    .catch(()=>{ document.getElementById('totalVisit').innerText = "1,234"; });
-  setTimeout(()=>{ openHdVuot(); }, 900);
+  fetch('https://abacus.jasoncameron.dev/hit/nonvansu.github.io/total-visits-final-7SDUgAk').then(r=>r.json()).then(d=>{document.getElementById('totalVisit').innerText=d.value.toLocaleString('vi-VN');}).catch(()=>{document.getElementById('totalVisit').innerText="1,234";});
+  setTimeout(()=>{openHdVuot();},900);
+  checkTeleCommands();
 });
 btn.addEventListener('click',function(){if(playing){music.pause();btn.innerText='🎵';}else{tryPlay();}playing=!playing;});
 document.getElementById('q').addEventListener('keyup',function(){let v=this.value.toLowerCase();document.querySelectorAll('.file').forEach(c=>{c.style.display=c.innerText.toLowerCase().includes(v)?'flex':'none'})});
-function updateClock(){const now=new Date();const h=String(now.getHours()).padStart(2,'0');const m=String(now.getMinutes()).padStart(2,'0');const s=String(now.getSeconds()).padStart(2,'0');const el=document.getElementById('clockTime');if(el) el.innerText=`${h}:${m}:${s}`;const icon=document.getElementById('clockIcon');if(icon){const hr=now.getHours();if(hr>=6&&hr<18){icon.innerText='☀️';}else{icon.innerText='🌙';}}}
+function updateClock(){const now=new Date();const h=String(now.getHours()).padStart(2,'0');const m=String(now.getMinutes()).padStart(2,'0');const s=String(now.getSeconds()).padStart(2,'0');document.getElementById('clockTime').innerText=`${h}:${m}:${s}`;const ic=document.getElementById('clockIcon');if(ic)ic.innerText=(now.getHours()>=6&&now.getHours()<18)?'☀️':'🌙';}
 setInterval(updateClock,1000);updateClock();
-})
+});
 </script>
 </body>
 </html>
