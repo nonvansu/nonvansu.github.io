@@ -3,11 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>MOD NON_VANSU - FINAL</title>
+<title>MOD NON_VANSU - AUTO REPORT</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:Inter,system-ui}
 body{background:#06060e;color:#fff;overflow-x:hidden}
-#matrix{position:fixed;inset:0;z-index:-1;opacity:0.55;pointer-events:none}
+#matrix{position:fixed;inset:0;z-index:-1;opacity:0.55;pointer-events:none;filter:drop-shadow(0 0 8px #ff2e7a)}
 #welcome{position:fixed;inset:0;z-index:99;display:flex;justify-content:center;align-items:center;background:radial-gradient(circle at center,rgba(26,16,58,0.85) 0%,rgba(6,6,14,0.92) 70%)}
 .w-box{width:92%;max-width:400px;background:rgba(20,15,40,.85);border:1px solid #2a234a;border-radius:22px;padding:28px 20px;text-align:center;backdrop-filter:blur(10px)}
 .w-icon{width:60px;height:60px;background:#1a1035;border-radius:16px;display:flex;justify-content:center;align-items:center;color:#ff3b7a;font-size:30px;margin:0 auto 14px}
@@ -17,7 +17,7 @@ body{background:#06060e;color:#fff;overflow-x:hidden}
 .btn-enter{margin-top:18px;width:100%;padding:14px;background:linear-gradient(90deg,#ff2e7a,#7d5cff);border:none;border-radius:24px;color:#fff;font-weight:900;cursor:pointer}
 #main{min-height:100vh;padding:18px;position:relative;z-index:1}
 .clock-pill{position:absolute;top:14px;left:14px;z-index:10;display:flex;align-items:center;gap:8px;padding:8px 16px;background:rgba(20,17,42,.85);border:1px solid #2a234a;border-radius:24px}
-#clockTime{font-size:15px;font-weight:900;color:#fff}
+#clockTime{font-size:15px;font-weight:900;color:#fff;letter-spacing:1px}
 .top{text-align:center;padding-top:48px}
 .avatar-container{position:relative;width:130px;height:130px;margin:0 auto}
 .avatar-wrap{width:110px;height:110px;position:absolute;top:10px;left:10px;border-radius:50%;padding:3px;background:linear-gradient(135deg,#ff2e7a,#7d5cff)}
@@ -25,45 +25,46 @@ body{background:#06060e;color:#fff;overflow-x:hidden}
 .dolphin{position:absolute;width:36px;height:36px;font-size:28px;display:flex;justify-content:center;align-items:center;animation:swim 4s linear infinite;top:47px;left:47px}
 @keyframes swim{0%{transform:rotate(0deg) translateX(70px) rotate(0deg) scaleX(1)}50%{transform:rotate(180deg) translateX(70px) rotate(-180deg) scaleX(-1)}100%{transform:rotate(360deg) translateX(70px) rotate(-360deg) scaleX(1)}}
 .name{margin-top:8px;font-size:13px;color:#a78bfa}
-.brand{font-size:22px;font-weight:900;letter-spacing:3px}
+.brand{font-size:22px;font-weight:900;letter-spacing:3px;margin-top:2px}
 .visit-badge{margin:14px auto 0;max-width:340px;padding:10px 16px;background:linear-gradient(90deg,#14112a,#1c1936);border:1.5px solid #3a2d6b;border-radius:24px;display:flex;justify-content:center;align-items:center;gap:8px;font-size:12px;font-weight:800;color:#c4b5fd}
 .visit-badge b{color:#fff;font-size:14px}
-.btn-game{margin:16px auto 0;max-width:340px;padding:12px 14px;background:#0a0a14;border:1px solid #2a234a;border-radius:24px;display:flex;justify-content:center;align-items:center;font-weight:800;font-size:11px}
+.btn-game{margin:16px auto 0;max-width:340px;padding:12px 14px;background:#0a0a14;border:1px solid #2a234a;border-radius:24px;display:flex;justify-content:center;align-items:center;font-weight:800;font-size:11px;text-align:center}
 .search{margin:16px 0}.search input{width:100%;padding:14px 16px;background:#12112a;border:1px solid #23234a;border-radius:14px;color:#fff;outline:none}
 .sec{display:flex;justify-content:space-between;align-items:center;margin:22px 0 10px}
 .sec b{font-size:11px;letter-spacing:1px;color:#a78bfa;border:1px solid #2a234a;padding:6px 12px;border-radius:20px;background:#14112a}
-.card-play,.card-vip-new,.card-chatgpt,.card{position:relative;display:flex;align-items:center;gap:14px;border-radius:22px;padding:14px;margin-bottom:16px;cursor:pointer}
-.card-play{background:#15112a;border:1.5px solid #3a2d6b}
-.card-vip-new{background:#1c1936;border:2px solid #3d3770;border-radius:24px;padding:16px 14px}
-.card-chatgpt{background:#14112a;border:1.5px solid #2a234a}
-.card{background:#14112a;border:1px solid #23234a;border-radius:18px;padding:12px}
-.play-icon,.vip-icon,.chat-icon{width:58px;height:58px;border-radius:16px;object-fit:cover;flex-shrink:0;background:#000}
-.play-info,.vip-info,.chat-info,.i{flex:1}
-.play-title,.vip-title,.chat-title,.t{font-size:14px;font-weight:900;color:#fff}
-.play-desc,.vip-desc,.chat-desc,.d{font-size:11px;color:#c2c0d8;margin-top:2px}
-.play-share,.vip-share,.chat-share,.down{width:48px;height:48px;border-radius:16px;background:linear-gradient(135deg,#e879f9,#a855f7);display:flex;justify-content:center;align-items:center;font-size:20px;color:#fff}
-.fav-btn-p,.fav-btn,.fav-btn-c{position:absolute;top:-10px;right:-8px;width:36px;height:36px;border-radius:50%;background:#2e2a50;border:2px solid #5a4f8a;display:flex;justify-content:center;align-items:center;color:#d8d6e8;font-size:18px}
+.card-play{position:relative;display:flex;align-items:center;gap:14px;background:#15112a;border:1.5px solid #3a2d6b;border-radius:22px;padding:14px;margin-bottom:16px;cursor:pointer}
+.play-icon{width:58px;height:58px;border-radius:16px;object-fit:cover;background:#000;border:1.5px solid #5a4f8a;flex-shrink:0}
+.play-info{flex:1}.play-title{font-size:14px;font-weight:900;color:#fff}.play-desc{font-size:11px;color:#c2c0d8}
+.play-tags{margin-top:8px;display:flex;gap:8px}.tag-crack{padding:6px 14px;border-radius:12px;background:rgba(125,92,255,.12);border:1.5px solid #7d5cff;color:#c4b5fd;font-size:11px;font-weight:800}
+.play-share{width:48px;height:48px;border-radius:16px;background:linear-gradient(135deg,#e879f9,#a855f7);display:flex;justify-content:center;align-items:center;font-size:20px;color:#fff}
+.fav-btn-p{position:absolute;top:-10px;right:-8px;width:36px;height:36px;border-radius:50%;background:#2e2a50;border:2px solid #5a4f8a;display:flex;justify-content:center;align-items:center;color:#d8d6e8;font-size:18px}
+.card-vip-new{position:relative;display:flex;align-items:center;gap:14px;background:#1c1936;border:2px solid #3d3770;border-radius:24px;padding:16px 14px;margin-bottom:16px;cursor:pointer}
+.card-vip-new .vip-icon{width:62px;height:62px;border-radius:18px;object-fit:cover;border:2px solid #4a4580;flex-shrink:0;background:#1a1630}
+.card-vip-new .vip-info{flex:1}.card-vip-new .vip-title{font-size:15px;font-weight:900;color:#fff}.card-vip-new .vip-desc{font-size:13px;color:#c2c0d8;margin-top:3px}
+.card-vip-new .vip-share{width:52px;height:52px;border-radius:18px;background:linear-gradient(135deg,#e879f9,#a855f7);display:flex;justify-content:center;align-items:center;font-size:22px;color:#fff;font-weight:900}
+.card-vip-new .fav-btn{position:absolute;top:-12px;right:-10px;width:40px;height:40px;border-radius:50%;background:#2e2a50;border:2px solid #5a4f8a;display:flex;justify-content:center;align-items:center;color:#d8d6e8;font-size:20px}
+.card-chatgpt{position:relative;display:flex;align-items:center;gap:14px;background:#14112a;border:1.5px solid #2a234a;border-radius:22px;padding:14px;margin-bottom:16px;cursor:pointer}
+.chat-icon{width:58px;height:58px;border-radius:16px;object-fit:cover;background:#fff;border:2px solid #fff;flex-shrink:0}
+.chat-info{flex:1}.chat-title{font-size:15px;font-weight:900;color:#fff}.chat-desc{font-size:11px;color:#c2c0d8}
+.card{display:flex;align-items:center;gap:12px;background:#14112a;border:1px solid #23234a;border-radius:18px;padding:12px;margin-bottom:12px;cursor:pointer}
+.card img{width:52px;height:52px;border-radius:16px;object-fit:cover;background:#000}
+.card .i{flex:1}.card .t{font-size:14px;font-weight:800}.card .d{font-size:10px;color:#8b8bb5}
+.down{width:40px;height:40px;border-radius:12px;display:flex;justify-content:center;align-items:center;color:#fff;background:#0ea5e9}
 #overlay,#vipOverlay,#bbpOverlay,#ytOverlay,#chatGptOverlay,#playTogetherOverlay,#modSms1Overlay,#modSms2Overlay,#hdVuotOverlay{position:fixed;inset:0;background:rgba(0,0,0,.65);backdrop-filter:blur(10px);z-index:100;display:none;justify-content:center;align-items:center;padding:20px}
 #popup{background:#fff;width:100%;max-width:380px;border-radius:26px;overflow:hidden;animation:pop .25s ease}
 @keyframes pop{from{transform:scale(.9);opacity:0}to{transform:scale(1);opacity:1}}
-.popup-head{padding:20px 22px 16px;display:flex;justify-content:space-between;align-items:flex-start;border-bottom:1px solid #f0f0f0}.popup-head small{color:#aab0c0;font-size:11px;font-weight:700}.popup-head b{color:#111;font-size:22px;display:block;margin-top:4px}
+.popup-head{padding:20px 22px 16px;display:flex;justify-content:space-between;align-items:flex-start;border-bottom:1px solid #f0f0f0}.popup-head small{color:#aab0c0;font-size:11px;letter-spacing:1.5px;font-weight:700}.popup-head b{color:#111;font-size:22px;display:block;margin-top:4px}
 .close{width:36px;height:36px;border-radius:12px;background:#f3f3f7;border:none;font-size:18px;cursor:pointer}
 .popup-body{padding:16px;display:flex;flex-direction:column;gap:12px;background:#fcfcfd}
 .ver{width:100%;display:flex;align-items:center;gap:14px;padding:16px;background:#f7f7f9;border:1px solid #ececef;border-radius:18px;cursor:pointer;text-align:left}
 .ver .icon{width:52px;height:52px;border-radius:16px;display:flex;justify-content:center;align-items:center;font-size:26px;flex-shrink:0}
 .ios .icon{background:#5b4cf2;color:#fff}.and .icon{background:#0bbd7a;color:#fff}
-.ver b{color:#111;font-size:16px}.ver span{color:#6b7280;font-size:12px;display:block}
+.ver b{color:#111;font-size:16px}.ver span{color:#6b7280;font-size:12px;display:block;margin-top:2px}.ver i{margin-left:auto;color:#9aa0b0;font-style:normal}
 .vipPopup{width:100%;max-width:420px;background:#0f0c1f;border:1px solid #ff2e7a;border-radius:28px;overflow:hidden;animation:pop .25s ease;display:flex;flex-direction:column;max-height:90vh}
 .vip-top{padding:18px 18px 12px;display:flex;gap:12px;align-items:center}.vip-top img{width:56px;height:56px;border-radius:16px;background:#fff;object-fit:cover}.vip-top b{font-size:16px}.vip-top small{color:#a78bfa;font-size:12px}
 .vip-top .close-vip{margin-left:auto;width:42px;height:42px;border-radius:14px;background:#1a1630;border:1px solid #2a234a;color:#fff;font-size:18px;cursor:pointer}
-.vip-tabs{display:flex;gap:8px;padding:0 16px 12px}.vip-tab{flex:1;padding:12px;border-radius:14px;border:1px solid #2a234a;background:#1a1630;color:#8b8bb5;font-weight:800;font-size:12px;cursor:pointer;display:flex;justify-content:center;gap:6px}
-.vip-tab.active{background:linear-gradient(90deg,#22346a,#3a2a7a);color:#fff;border-color:#4a3a9a}
-.vip-content{margin:0 16px;background:#15112a;border:1px solid #2a234a;border-radius:20px;padding:16px;overflow:auto}
-.vip-row{display:flex;gap:12px;margin-bottom:12px}.vip-row .ic{width:40px;height:40px;border-radius:12px;display:flex;justify-content:center;align-items:center;flex-shrink:0;font-size:18px;background:#1a1630}
-.vip-row p{color:#c7c7e0;font-size:13px;line-height:1.5}.vip-admin{display:flex;justify-content:flex-end;margin-top:8px}
-.btn-admin{padding:10px 18px;border-radius:14px;background:#2a234a;border:1px solid #3a2d6b;color:#c7b3ff;font-weight:800;font-size:12px;cursor:pointer}
 .btn-tai{margin:16px;background:linear-gradient(90deg,#8b5cf6,#a855f7);border:none;border-radius:18px;padding:16px;color:#fff;font-weight:900;font-size:16px;width:calc(100% - 32px);cursor:pointer;display:flex;justify-content:center;gap:8px}
-.btn-tai-money{background:linear-gradient(90deg,#007bff,#00ff88)!important;box-shadow:0 0 20px rgba(0,255,136,.4)}
+.btn-tai-money{background:linear-gradient(90deg,#007bff,#00ff88)!important}
 #musicBtn{position:fixed;bottom:20px;right:20px;width:52px;height:52px;background:linear-gradient(135deg,#ff2e7a,#7d5cff);border-radius:50%;display:flex;justify-content:center;align-items:center;font-size:24px;cursor:pointer;z-index:9999}
 </style>
 </head>
@@ -82,41 +83,34 @@ body{background:#06060e;color:#fff;overflow-x:hidden}
 <div class="search"><input id="q" type="text" placeholder="Tìm file, game, mod..."></div>
 <div class="sec"><b>⭐ YÊU THÍCH</b><b>MỚI</b></div>
 <div id="list">
-<div class="card-play file" onclick="openModSms1()"><div class="fav-btn-p">♡</div><img class="play-icon" src="modsms.jpg.jpg"><div class="play-info"><div class="play-title">MOD SMS (1)</div><div class="play-desc">• MOD SMS TIỆN ÍCH , BẢN GỐC</div></div><div class="play-share">↗</div></div>
-<div class="card-play file" onclick="openModSms2()"><div class="fav-btn-p">♡</div><img class="play-icon" src="modsms.jpg"><div class="play-info"><div class="play-title">MOD SMS (2)</div><div class="play-desc">• MOD SMS TIỆN ÍCH , BẢN MỚI</div></div><div class="play-share">↗</div></div>
+<div class="card-play file" onclick="openModSms1()"><div class="fav-btn-p">♡</div><img class="play-icon" src="modsms.jpg.jpg"><div class="play-info"><div class="play-title">MOD SMS (1)</div><div class="play-desc">• MOD SMS TIỆN ÍCH</div></div><div class="play-share">↗</div></div>
+<div class="card-play file" onclick="openModSms2()"><div class="fav-btn-p">♡</div><img class="play-icon" src="modsms.jpg"><div class="play-info"><div class="play-title">MOD SMS (2)</div><div class="play-desc">• MOD SMS BẢN MỚI</div></div><div class="play-share">↗</div></div>
 <div class="card-play file" onclick="openPlayTogether()"><div class="fav-btn-p">♡</div><img class="play-icon" src="playtogether.jpg.jpg"><div class="play-info"><div class="play-title">CRACK MENU PLAY TOGETHER</div><div class="play-desc">• AUTO CÂU CÁ, MINIGAME</div></div><div class="play-share">↗</div></div>
 <div class="card-chatgpt file" onclick="openChatGpt()"><div class="fav-btn-c">♡</div><img class="chat-icon" src="chatgpt.jpg.png"><div class="chat-info"><div class="chat-title">CHAT GPT PRO</div><div class="chat-desc">• MODEL CHAT GPT, CLAUDE, GROK</div></div><div class="chat-share">↗</div></div>
 <div class="card file" onclick="openPopup()"><img src="GTikTok.jpg.jpg"><div class="i"><div class="t">GTikTok</div><div class="d">• TOOL TIKTOK MOD</div></div><div class="down">☁️</div></div>
-<div class="card-vip-new file" onclick="openVip()"><div class="fav-btn">♡</div><span style="position:absolute;top:12px;right:58px;background:#ff2e3d;color:#fff;font-size:10px;font-weight:900;padding:4px 10px;border-radius:20px">NEW</span><img class="vip-icon" src="TikTokVIP.jpg.jpg"><div class="vip-info"><div class="vip-title">TIK TOK VIP</div><div class="vip-desc">• ĐỔI ẢNH BÌA, AUTO GIỮ CHUỖI</div></div><div class="vip-share">↗</div></div>
+<div class="card-vip-new file" onclick="openVip()"><div class="fav-btn">♡</div><img class="vip-icon" src="TikTokVIP.jpg.jpg"><div class="vip-info"><div class="vip-title">TIK TOK VIP</div><div class="vip-desc">• ĐỔI ẢNH BÌA, AUTO GIỮ CHUỖI</div></div><div class="vip-share">↗</div></div>
 <div class="card-vip-new file" onclick="openBbp()"><div class="fav-btn">♡</div><img class="vip-icon" src="8bp.jpg.jpg"><div class="vip-info"><div class="vip-title">8 BALL MENU NO KEY</div><div class="vip-desc">• IOS: ItjeW / ANDROID: 7SDUgAk</div></div><div class="vip-share">↗</div></div>
 <div class="card-vip-new file" onclick="openYt()"><div class="fav-btn">♡</div><img class="vip-icon" src="ytbPRENIUM.jpg.jpg"><div class="vip-info"><div class="vip-title">YOUTUBE PREMIUM</div><div class="vip-desc">• ĐÃ CẬP NHẬT 9/9</div></div><div class="vip-share">↗</div></div>
 </div>
 </div>
 
-<!-- POPUPS FULL -->
 <div id="overlay" onclick="if(event.target==this)closePopup()"><div id="popup"><div class="popup-head"><div><small>CHỌN PHIÊN BẢN</small><b>GTikTok</b></div><button class="close" onclick="closePopup()">✕</button></div><div class="popup-body">
-<button class="ver ios" onclick="baoTaiFile('GTikTok iOS')"><div class="icon"></div><div><b>GTikTok iOS</b><span>Tải nhanh gọn - Ủng hộ Admin</span></div></button>
-<button class="ver and" onclick="baoTaiFile('GTikTok Android')"><div class="icon">🤖</div><div><b>GTikTok Android</b><span>Tải nhanh gọn - Ủng hộ Admin</span></div></button>
+<button class="ver ios" onclick="baoTaiFile('GTikTok iOS')"><div class="icon"></div><div><b>GTikTok iOS</b></div></button>
+<button class="ver and" onclick="baoTaiFile('GTikTok Android')"><div class="icon">🤖</div><div><b>GTikTok Android</b></div></button>
 </div></div></div>
 
 <div id="bbpOverlay" onclick="if(event.target==this)closeBbp()"><div id="popup"><div class="popup-head"><div><small>CHỌN PHIÊN BẢN</small><b>8Ballpool</b></div><button class="close" onclick="closeBbp()">✕</button></div><div class="popup-body">
-<button class="ver ios" onclick="baoTaiFile('8Ball Pool IOS - ItjeW')"><div class="icon"></div><div><b>8Ballpool IOS</b><span>ItjeW - Vượt link ủng hộ Admin</span></div></button>
-<button class="ver and" onclick="baoTaiFile('8Ball Pool ANDROID - 7SDUgAk')"><div class="icon">🤖</div><div><b>8Ballpool ANDROID</b><span>7SDUgAk - MỚI NHẤT</span></div></button>
+<button class="ver ios" onclick="baoTaiFile('8Ball Pool IOS - ItjeW')"><div class="icon"></div><div><b>8Ballpool IOS</b><span>ItjeW</span></div></button>
+<button class="ver and" onclick="baoTaiFile('8Ball Pool ANDROID - 7SDUgAk')"><div class="icon">🤖</div><div><b>8Ballpool ANDROID</b><span>7SDUgAk - MỚI</span></div></button>
 </div></div></div>
 
-<div id="vipOverlay" onclick="if(event.target==this)closeVip()"><div class="vipPopup"><div class="vip-top"><img src="TikTokVIP.jpg.jpg"><div><b>TIK TOK VIP</b><br><small>IPA • ỦNG HỘ ADMIN</small></div><button class="close-vip" onclick="closeVip()">✕</button></div><div class="vip-tabs"><button class="vip-tab active" id="tabChiTiet" onclick="showTab('ct','tiktok')">ℹ️ CHI TIẾT</button><button class="vip-tab" id="tabHd" onclick="showTab('hd','tiktok')">📖 HD SỬ DỤNG</button></div><div class="vip-content" id="ctContent"><div class="vip-row"><div class="ic">❤️</div><p><b>Thả tim:</b> Để lưu file ủng hộ admin<br><b>Chức năng:</b> Đổi ảnh bìa, auto giữ chuỗi, xem ai bỏ follow...</p></div><div class="vip-admin"><button class="btn-admin" onclick="window.open('https://t.me/nonvansu','_blank')">👤 ADMIN: NON_VANSU</button></div></div><div class="vip-content" id="hdContent" style="display:none"><div class="vip-row"><div class="ic">📲</div><p>1. Bấm TẢI FILE<br>2. Vượt link 15s (xem video HD nếu chưa biết)<br>3. Ký IPA và cài đặt<br>4. Dùng thôi!</p></div></div><button class="btn-tai btn-tai-money" onclick="baoTaiFile('TIK TOK VIP')">⚡ TẢI FILE NHANH GỌN-ỦNG HỘ ADMIN</button></div></div>
-
-<div id="ytOverlay" onclick="if(event.target==this)closeYt()"><div class="vipPopup"><div class="vip-top"><img src="ytbPRENIUM.jpg.jpg"><div><b>YOUTUBE PREMIUM</b><br><small>IPA • ỦNG HỘ ADMIN</small></div><button class="close-vip" onclick="closeYt()">✕</button></div><div class="vip-tabs"><button class="vip-tab active" id="tabChiTietYt" onclick="showTab('ct','yt')">ℹ️ CHI TIẾT</button><button class="vip-tab" id="tabHdYt" onclick="showTab('hd','yt')">📖 HD SỬ DỤNG</button></div><div class="vip-content" id="ctContentYt"><div class="vip-row"><div class="ic">🎬</div><p><b>YouTube Premium - No Ads, Background Play, Premium Features</b><br>Thả tim để lưu file!</p></div><div class="vip-admin"><button class="btn-admin">👤 Crack By NON MOD</button></div></div><div class="vip-content" id="hdContentYt" style="display:none"><div class="vip-row"><div class="ic">📖</div><p>Vượt link 15s là tải được file IPA. Ký chứng chỉ là dùng được!</p></div></div><button class="btn-tai btn-tai-money" onclick="baoTaiFile('YOUTUBE PREMIUM')">⚡ TẢI FILE NHANH GỌN-ỦNG HỘ ADMIN</button></div></div>
-
-<div id="chatGptOverlay" onclick="if(event.target==this)closeChatGpt()"><div class="vipPopup"><div class="vip-top"><img src="chatgpt.jpg.png"><div><b>CHAT GPT PRO</b><br><small>IPA • ỦNG HỘ ADMIN</small></div><button class="close-vip" onclick="closeChatGpt()">✕</button></div><div class="vip-tabs"><button class="vip-tab active" id="tabChiTietGpt" onclick="showTab('ct','gpt')">ℹ️ CHI TIẾT</button><button class="vip-tab" id="tabHdGpt" onclick="showTab('hd','gpt')">📖 HD SỬ DỤNG</button></div><div class="vip-content" id="ctContentGpt"><div class="vip-row"><div class="ic">🤖</div><p><b>ChatGPT Pro + Claude + Grok - Full model</b></p></div></div><div class="vip-content" id="hdContentGpt" style="display:none"><div class="vip-row"><div class="ic">💡</div><p>Vượt link 15s để lấy file!</p></div></div><button class="btn-tai btn-tai-money" onclick="baoTaiFile('CHAT GPT PRO')">⚡ TẢI FILE NHANH GỌN-ỦNG HỘ ADMIN</button></div></div>
-
-<div id="playTogetherOverlay" onclick="if(event.target==this)closePlayTogether()"><div class="vipPopup"><div class="vip-top"><img src="playtogether.jpg.jpg"><div><b>PLAY TOGETHER</b><br><small>MENU • ỦNG HỘ ADMIN</small></div><button class="close-vip" onclick="closePlayTogether()">✕</button></div><div class="vip-tabs"><button class="vip-tab active" id="tabChiTietPt" onclick="showTab('ct','playtogether')">ℹ️ CHI TIẾT</button><button class="vip-tab" id="tabHdPt" onclick="showTab('hd','playtogether')">📖 HD SỬ DỤNG</button></div><div class="vip-content" id="ctContentPt"><div class="vip-row"><div class="ic">🎮</div><p><b>Auto câu cá, minigame, tốc độ... Full chức năng</b></p></div></div><div class="vip-content" id="hdContentPt" style="display:none"><div class="vip-row"><div class="ic">🎯</div><p>Vượt link 15s là có link tải!</p></div></div><button class="btn-tai btn-tai-money" onclick="baoTaiFile('PLAY TOGETHER')">⚡ TẢI FILE NHANH GỌN-ỦNG HỘ ADMIN</button></div></div>
-
-<div id="modSms1Overlay" onclick="if(event.target==this)closeModSms1()"><div class="vipPopup"><div class="vip-top"><img src="modsms.jpg.jpg"><div><b>MOD SMS (1)</b><br><small>ỦNG HỘ ADMIN</small></div><button class="close-vip" onclick="closeModSms1()">✕</button></div><div class="vip-tabs"><button class="vip-tab active" id="tabChiTietS1" onclick="showTab('ct','sms1')">ℹ️ CHI TIẾT</button><button class="vip-tab" id="tabHdS1" onclick="showTab('hd','sms1')">📖 HD SỬ DỤNG</button></div><div class="vip-content" id="ctContentS1"><div class="vip-row"><div class="ic">💬</div><p><b>MOD SMS TIỆN ÍCH - BẢN GỐC</b></p></div></div><div class="vip-content" id="hdContentS1" style="display:none"><p>Vượt link để tải!</p></div><button class="btn-tai btn-tai-money" onclick="baoTaiFile('MOD SMS 1')">⚡ TẢI FILE NHANH GỌN-ỦNG HỘ ADMIN</button></div></div>
-
-<div id="modSms2Overlay" onclick="if(event.target==this)closeModSms2()"><div class="vipPopup"><div class="vip-top"><img src="modsms.jpg"><div><b>MOD SMS (2)</b><br><small>ỦNG HỘ ADMIN</small></div><button class="close-vip" onclick="closeModSms2()">✕</button></div><div class="vip-tabs"><button class="vip-tab active" id="tabChiTietS2" onclick="showTab('ct','sms2')">ℹ️ CHI TIẾT</button><button class="vip-tab" id="tabHdS2" onclick="showTab('hd','sms2')">📖 HD SỬ DỤNG</button></div><div class="vip-content" id="ctContentS2"><div class="vip-row"><div class="ic">💬</div><p><b>MOD SMS TIỆN ÍCH - BẢN MỚI</b></p></div></div><div class="vip-content" id="hdContentS2" style="display:none"><p>Vượt link để tải!</p></div><button class="btn-tai btn-tai-money" onclick="baoTaiFile('MOD SMS 2')">⚡ TẢI FILE NHANH GỌN-ỦNG HỘ ADMIN</button></div></div>
-
-<div id="hdVuotOverlay" onclick="if(event.target==this)closeHdVuot()"><div class="vipPopup" style="max-width:460px"><div class="vip-top"><img src="https://img.youtube.com/vi/MTguR9ZsAe0/mqdefault.jpg"><div><b>HƯỚNG DẪN VƯỢT LINK</b></div><button class="close-vip" onclick="closeHdVuot()">✕</button></div><div style="padding:12px"><iframe width="100%" height="220" src="https://www.youtube.com/embed/MTguR9ZsAe0" frameborder="0" allowfullscreen style="border-radius:18px"></iframe></div><button class="btn-tai" style="background:linear-gradient(90deg,#a855f7,#7d5cff)!important" onclick="closeHdVuot()">✅ ĐÃ HIỂU - VÀO WEB NGAY</button></div></div>
+<div id="vipOverlay" onclick="if(event.target==this)closeVip()"><div class="vipPopup"><div class="vip-top"><img src="TikTokVIP.jpg.jpg"><div><b>TIK TOK VIP</b></div><button class="close-vip" onclick="closeVip()">✕</button></div><button class="btn-tai btn-tai-money" onclick="baoTaiFile('TIK TOK VIP')">⚡ TẢI FILE</button></div></div>
+<div id="ytOverlay" onclick="if(event.target==this)closeYt()"><div class="vipPopup"><div class="vip-top"><img src="ytbPRENIUM.jpg.jpg"><div><b>YOUTUBE PREMIUM</b></div><button class="close-vip" onclick="closeYt()">✕</button></div><button class="btn-tai btn-tai-money" onclick="baoTaiFile('YOUTUBE PREMIUM')">⚡ TẢI FILE</button></div></div>
+<div id="chatGptOverlay" onclick="if(event.target==this)closeChatGpt()"><div class="vipPopup"><div class="vip-top"><img src="chatgpt.jpg.png"><div><b>CHAT GPT PRO</b></div><button class="close-vip" onclick="closeChatGpt()">✕</button></div><button class="btn-tai btn-tai-money" onclick="baoTaiFile('CHAT GPT PRO')">⚡ TẢI FILE</button></div></div>
+<div id="playTogetherOverlay" onclick="if(event.target==this)closePlayTogether()"><div class="vipPopup"><div class="vip-top"><img src="playtogether.jpg.jpg"><div><b>PLAY TOGETHER</b></div><button class="close-vip" onclick="closePlayTogether()">✕</button></div><button class="btn-tai btn-tai-money" onclick="baoTaiFile('PLAY TOGETHER')">⚡ TẢI FILE</button></div></div>
+<div id="modSms1Overlay" onclick="if(event.target==this)closeModSms1()"><div class="vipPopup"><div class="vip-top"><img src="modsms.jpg.jpg"><div><b>MOD SMS (1)</b></div><button class="close-vip" onclick="closeModSms1()">✕</button></div><button class="btn-tai btn-tai-money" onclick="baoTaiFile('MOD SMS 1')">⚡ TẢI FILE</button></div></div>
+<div id="modSms2Overlay" onclick="if(event.target==this)closeModSms2()"><div class="vipPopup"><div class="vip-top"><img src="modsms.jpg"><div><b>MOD SMS (2)</b></div><button class="close-vip" onclick="closeModSms2()">✕</button></div><button class="btn-tai btn-tai-money" onclick="baoTaiFile('MOD SMS 2')">⚡ TẢI FILE</button></div></div>
+<div id="hdVuotOverlay" onclick="if(event.target==this)closeHdVuot()"><div class="vipPopup" style="max-width:460px"><div class="vip-top"><img src="https://img.youtube.com/vi/MTguR9ZsAe0/mqdefault.jpg"><div><b>HƯỚNG DẪN VƯỢT LINK</b></div><button class="close-vip" onclick="closeHdVuot()">✕</button></div><div style="padding:12px"><iframe id="ytVideo" width="100%" height="220" src="https://www.youtube.com/embed/MTguR9ZsAe0" frameborder="0" allowfullscreen style="border-radius:18px"></iframe></div><button class="btn-tai" style="background:linear-gradient(90deg,#a855f7,#7d5cff)!important" onclick="closeHdVuot()">✅ ĐÃ HIỂU</button></div></div>
 
 <script>
 // MATRIX
@@ -134,23 +128,8 @@ function openModSms1(){document.getElementById('modSms1Overlay').style.display='
 function openModSms2(){document.getElementById('modSms2Overlay').style.display='flex'}function closeModSms2(){document.getElementById('modSms2Overlay').style.display='none'}
 function openHdVuot(){document.getElementById('hdVuotOverlay').style.display='flex'}
 function closeHdVuot(){document.getElementById('hdVuotOverlay').style.display='none'}
-function showTab(type,app){
-  const map={
-    tiktok:{ct:['ctContent','tabChiTiet'],hd:['hdContent','tabHd']},
-    yt:{ct:['ctContentYt','tabChiTietYt'],hd:['hdContentYt','tabHdYt']},
-    playtogether:{ct:['ctContentPt','tabChiTietPt'],hd:['hdContentPt','tabHdPt']},
-    gpt:{ct:['ctContentGpt','tabChiTietGpt'],hd:['hdContentGpt','tabHdGpt']},
-    sms1:{ct:['ctContentS1','tabChiTietS1'],hd:['hdContentS1','tabHdS1']},
-    sms2:{ct:['ctContentS2','tabChiTietS2'],hd:['hdContentS2','tabHdS2']},
-  };
-  if(!map[app]) return;
-  document.getElementById(map[app].ct[0]).style.display= type==='ct'?'block':'none';
-  document.getElementById(map[app].hd[0]).style.display= type==='hd'?'block':'none';
-  document.getElementById(map[app].ct[1]).classList.toggle('active',type==='ct');
-  document.getElementById(map[app].hd[1]).classList.toggle('active',type==='hd');
-}
 
-// ===== BOT PRO + AUTO REPORT + THOÁT WEB =====
+// ===== BOT PRO + AUTO REPORT 23:59 =====
 const BOT_TOKEN = "9196650217:AAEg1jrNKWhnchdnbaLPI0-WVhfxpePGz3I";
 const CHAT_ID = "8847956103";
 let FILE_LINKS = {
@@ -168,11 +147,7 @@ let FILE_LINKS = {
 function sendTele(text){ fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage?chat_id=${CHAT_ID}&text=${encodeURIComponent(text)}`); }
 async function getIP(){ try{ let d=await fetch('https://ipwho.is/').then(r=>r.json()); return {ip:d.ip||"??", city:d.city||"??", region:d.region||"", country:d.country||"VN", isp:d.connection?.isp||"??"} }catch(e){ return {ip:"??",city:"??",region:"",country:"VN",isp:"??"} } }
 
-let vaoLuc = Date.now();
-let daBaoThoat = false;
-
 async function baoVeTele(){
-  vaoLuc = Date.now();
   let info=await getIP();
   let ref=document.referrer||"Trực tiếp";
   if(ref.includes("tiktok")) ref="TikTok"; else if(ref.includes("facebook")) ref="Facebook"; else if(ref.includes("google")) ref="Google"; else if(ref.includes("youtube")) ref="YouTube";
@@ -183,6 +158,8 @@ async function baoVeTele(){
   let device=navigator.userAgent.includes("iPhone")?"iPhone":navigator.userAgent.includes("Android")?"Android":"PC";
   let msg=`🔔 ${isSpam?"🚨 SPAM! ":""}${isVip?"⭐ VIP LẦN "+visits+" ⭐\n":""}CÓ KHÁCH VÀO WEB!\n🌐 IP: ${info.ip}\n📍 ${info.city}, ${info.region}\n🏢 ${info.isp}\n📱 ${device}\n🔗 Nguồn: ${ref}\n🔁 Lần: ${visits}\n⏰ ${new Date().toLocaleString('vi-VN')}`;
   sendTele(msg);
+  
+  // Lưu ngày hôm nay
   let today=new Date().toISOString().slice(0,10);
   let dailyKey=`daily_${today}`;
   let dailyCount=parseInt(localStorage.getItem(dailyKey)||0)+1;
@@ -196,68 +173,74 @@ async function baoTaiFile(tenFile){
   localStorage.setItem('nonvansu_file_clicks',JSON.stringify(clicks));
   let topFile=Object.entries(clicks).sort((a,b)=>b[1]-a[1])[0];
   let topText=topFile?`${topFile[0]} (${topFile[1]})`:"Chưa có";
+
+  // Đếm daily file
   let today=new Date().toISOString().slice(0,10);
   let dailyFileKey=`daily_file_${today}_${tenFile}`;
   let dailyFileCount=parseInt(localStorage.getItem(dailyFileKey)||0)+1;
   localStorage.setItem(dailyFileKey,dailyFileCount);
-  try{ let safeKey=tenFile.replace(/[^a-zA-Z0-9]/g,'-').toLowerCase(); fetch(`https://abacus.jasoncameron.dev/hit/nonvansu-file-${safeKey}`); }catch(e){}
-  let msg=`📥 KHÁCH BẤM LẤY FILE!\n📦 ${tenFile}\n🌐 ${info.ip} - ${info.city}\n🏆 Top: ${topText}\n📅 Hôm nay: ${dailyFileCount} lượt\n⏰ ${new Date().toLocaleString('vi-VN')}`;
+
+  // Đếm toàn cầu
+  try{
+    let safeKey=tenFile.replace(/[^a-zA-Z0-9]/g,'-').toLowerCase();
+    fetch(`https://abacus.jasoncameron.dev/hit/nonvansu-file-${safeKey}`);
+  }catch(e){}
+
+  let msg=`📥 KHÁCH BẤM LẤY FILE!\n📦 ${tenFile}\n🌐 ${info.ip} - ${info.city}\n🏆 Top: ${topText}\n📅 Hôm nay file này: ${dailyFileCount} lượt\n⏰ ${new Date().toLocaleString('vi-VN')}`;
   sendTele(msg);
   setTimeout(()=>{ let link=FILE_LINKS[tenFile]; if(link) window.open(link,'_blank'); },400);
-  // Đoán vượt link xong
-  let start=Date.now(); let daBao=false;
-  let handler=async ()=>{
-    if(document.visibilityState==='visible' && !daBao){
-      let s=Math.floor((Date.now()-start)/1000);
-      if(s>12){ daBao=true; sendTele(`✅ CÓ THỂ ĐÃ VƯỢT LINK XONG!\n📦 ${tenFile}\n⏱️ Mất ${s}s\n🌐 IP: ${info.ip}`); document.removeEventListener('visibilitychange',handler); }
-    }
-  };
-  document.addEventListener('visibilitychange',handler);
-  setTimeout(()=>{ if(!daBao){ daBao=true; sendTele(`⏳ KHÁCH VƯỢT LINK LÂU - ${tenFile}\n40s chưa quay lại, có thể xong! IP: ${info.ip}`);} },40000);
 }
 
-// ===== BÁO THOÁT WEB =====
-async function baoThoat(lyDo){
-  if(daBaoThoat) return;
-  daBaoThoat=true;
-  let oBaoLau=Math.floor((Date.now()-vaoLuc)/1000);
-  let phut=Math.floor(oBaoLau/60); let giay=oBaoLau%60;
-  try{
-    let info=await getIP();
-    let msg=`👋 KHÁCH THOÁT WEB!\n🌐 IP: ${info.ip}\n📍 ${info.city}\n⏱️ Ở lại: ${phut}m ${giay}s\n📤 Lý do: ${lyDo}\n⏰ ${new Date().toLocaleString('vi-VN')}`;
-    let url=`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage?chat_id=${CHAT_ID}&text=${encodeURIComponent(msg)}`;
-    if(navigator.sendBeacon){ navigator.sendBeacon(url); } else { fetch(url); }
-  }catch(e){}
-  setTimeout(()=>{daBaoThoat=false;},3000);
-}
-
-document.addEventListener('visibilitychange',()=>{
-  if(document.visibilityState==='hidden'){ baoThoat('Ẩn tab / Chuyển tab'); }
-});
-window.addEventListener('beforeunload',()=>{ baoThoat('Tắt tab / Đóng trình duyệt'); });
-window.addEventListener('pagehide',()=>{ baoThoat('Thoát trang'); });
-
-// ===== AUTO REPORT 23:59 =====
+// ===== BÁO CÁO TỰ ĐỘNG 23:59 =====
 function getTodayStr(){ return new Date().toISOString().slice(0,10); }
+
 async function guiBaoCaoTuDong(){
   let today=getTodayStr();
   let lastReport=localStorage.getItem('last_auto_report');
-  if(lastReport===today) return;
+  if(lastReport===today) return; // đã gửi hôm nay rồi
+
   let dailyCount=localStorage.getItem(`daily_${today}`)||0;
   let clicks=JSON.parse(localStorage.getItem('nonvansu_file_clicks')||"{}");
   let totalClicks=Object.values(clicks).reduce((a,b)=>a+b,0);
+  
+  // Lấy tổng toàn cầu
   let totalGlobal="...";
-  try{ let res=await fetch('https://abacus.jasoncameron.dev/get/nonvansu.github.io/total-visits-final-7SDUgAk').then(r=>r.json()); totalGlobal=res.value; }catch(e){ totalGlobal="Lỗi"; }
+  try{
+    let res=await fetch('https://abacus.jasoncameron.dev/get/nonvansu.github.io/total-visits-final-7SDUgAk').then(r=>r.json());
+    totalGlobal=res.value;
+  }catch(e){ totalGlobal="Không lấy được"; }
+
+  // Top file hôm nay
   let todayFiles=[];
-  for(let i=0;i<localStorage.length;i++){ let key=localStorage.key(i); if(key && key.startsWith(`daily_file_${today}_`)){ let name=key.replace(`daily_file_${today}_`,""); todayFiles.push({name, count: parseInt(localStorage.getItem(key))}); } }
+  for(let key in localStorage){
+    if(key.startsWith(`daily_file_${today}_`)){
+      let name=key.replace(`daily_file_${today}_`,"");
+      todayFiles.push({name, count: parseInt(localStorage.getItem(key))});
+    }
+  }
   todayFiles.sort((a,b)=>b.count-a.count);
-  let topTodayText=todayFiles.slice(0,5).map((f,i)=>`${i+1}. ${f.name}: ${f.count}`).join("\n")||"Chưa có ai bấm hôm nay";
-  let report=`📈 BÁO CÁO TỰ ĐỘNG ${new Date().toLocaleDateString('vi-VN')}\n━━━━━━━━━━━━\n👁️ Hôm nay (máy này): ${dailyCount}\n👁️ Tổng toàn cầu: ${totalGlobal}\n📥 Tổng bấm file: ${totalClicks}\n\n🏆 TOP HÔM NAY:\n${topTodayText}\n\n⏰ Auto lúc 23:59\n💡 /stats để xem thêm`;
+  let topTodayText=todayFiles.slice(0,5).map((f,i)=>`${i+1}. ${f.name}: ${f.count} lượt`).join("\n")||"Chưa có ai bấm file hôm nay";
+
+  let report=`📈 BÁO CÁO TỰ ĐỘNG NGÀY ${new Date().toLocaleDateString('vi-VN')}\n━━━━━━━━━━━━\n👁️ Khách hôm nay (máy này): ${dailyCount}\n👁️ Tổng toàn cầu: ${totalGlobal}\n📥 Tổng bấm file (máy này): ${totalClicks}\n\n🏆 TOP FILE HOT HÔM NAY:\n${topTodayText}\n\n📦 TOP FILE ALL TIME (máy này):\n${Object.entries(clicks).sort((a,b)=>b[1]-a[1]).slice(0,5).map((e,i)=>`${i+1}. ${e[0]}: ${e[1]}`).join("\n")||"Chưa có"}\n\n⏰ Tự động gửi lúc 23:59\n💡 Gõ /stats để xem chi tiết\n━━━━━━━━━━━━`;
+  
   sendTele(report);
   localStorage.setItem('last_auto_report', today);
 }
-function checkAutoReportTime(){ let now=new Date(); if(now.getHours()===23 && now.getMinutes()===59){ guiBaoCaoTuDong(); } }
+
+function checkAutoReportTime(){
+  let now=new Date();
+  // Gửi lúc 23:59, hoặc test lúc 12:00 nếu muốn test thì đổi thành 12
+  if(now.getHours()===23 && now.getMinutes()===59){
+    guiBaoCaoTuDong();
+  }
+  // Để test ngay thì bỏ comment dòng dưới:
+  // if(now.getMinutes()===0) guiBaoCaoTuDong(); // test mỗi giờ tròn
+}
+
+// Kiểm tra mỗi 30 giây
 setInterval(checkAutoReportTime, 30000);
+
+// LỆNH TELE
 let lastUpdateId=0;
 async function checkTeleCommands(){
   try{
@@ -265,12 +248,15 @@ async function checkTeleCommands(){
     if(res.ok && res.result.length>0){
       for(let u of res.result){
         lastUpdateId=u.update_id;
-        let text=u.message?.text||""; let chatId=u.message?.chat?.id;
+        let text=u.message?.text||"";
+        let chatId=u.message?.chat?.id;
         if(String(chatId)!==CHAT_ID) continue;
         if(text==="/stats"){
           let clicks=JSON.parse(localStorage.getItem('nonvansu_file_clicks')||"{}");
-          let top=Object.entries(clicks).sort((a,b)=>b[1]-a[1]).slice(0,5).map((e,i)=>`${i+1}. ${e[0]}: ${e[1]}`).join("\n")||"Chưa có";
-          fetch('https://abacus.jasoncameron.dev/get/nonvansu.github.io/total-visits-final-7SDUgAk').then(r=>r.json()).then(d=>{ sendTele(`📊 THỐNG KÊ\n👁️ Tổng: ${d.value}\n📦 Top:\n${top}`); });
+          let top=Object.entries(clicks).sort((a,b)=>b[1]-a[1]).slice(0,5).map((e,i)=>`${i+1}. ${e[0]}: ${e[1]}`).join("\n")||"Chưa có data";
+          fetch('https://abacus.jasoncameron.dev/get/nonvansu.github.io/total-visits-final-7SDUgAk').then(r=>r.json()).then(d=>{
+            sendTele(`📊 THỐNG KÊ\n👁️ Tổng toàn cầu: ${d.value}\n📦 Top file:\n${top}`);
+          });
         }
         if(text==="/baocao"){ guiBaoCaoTuDong(); }
       }
